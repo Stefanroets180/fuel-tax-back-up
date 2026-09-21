@@ -1,0 +1,712 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName UP-TO-DATE
+
+> Task :bootRun
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-06-29 19:13:18 [main] INFO  z.c.f.FleetExpenseApplication - Starting FleetExpenseApplication using Java 21.0.9 with PID 77548 (/Users/stefanroets/WebstormProjects/TAX-FUEL/1expense-tracking-app/spring-boot-backend/build/classes/java/main started by stefanroets in /Users/stefanroets/WebstormProjects/TAX-FUEL/1expense-tracking-app/spring-boot-backend)
+2026-06-29 19:13:18 [main] DEBUG z.c.f.FleetExpenseApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-06-29 19:13:18 [main] INFO  z.c.f.FleetExpenseApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-29 19:13:32 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-29 19:13:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1286 ms. Found 20 JPA repository interfaces.
+2026-06-29 19:13:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-29 19:13:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-29 19:13:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-06-29 19:13:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-29 19:13:44 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 25535 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2026-06-29 19:13:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-29 19:13:51 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-06-29 19:13:51 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-29 19:13:55 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-29 19:13:56 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-29 19:13:57 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1abf951a
+2026-06-29 19:13:57 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-29 19:13:57 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-29 19:14:19 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-29 19:14:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-29 19:14:25 [main] DEBUG z.c.f.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-06-29 19:14:26 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-29 19:14:56 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-29 19:15:02 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-06-29 19:15:03 [main] DEBUG o.s.s.web.DefaultSecurityFilterChain - Will secure Or [Mvc [pattern='/**']] with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-06-29 19:15:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-29 19:15:14 [main] INFO  z.c.f.FleetExpenseApplication - Started FleetExpenseApplication in 121.717 seconds (process running for 125.848)
+2026-06-29 19:15:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 19:15:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-29 19:15:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 18 ms
+2026-06-29 19:15:20 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/alerts/tyre-rotation/eb0d87f4-5ddb-4ba3-a47e-2138df07db30/rotate
+2026-06-29 19:15:22 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/alerts/tyre-rotation/eb0d87f4-5ddb-4ba3-a47e-2138df07db30/rotate
+2026-06-29 19:15:22 [http-nio-8080-exec-1] INFO  z.c.f.service.TyreRotationService - Starting recordRotation for tracking ID: eb0d87f4-5ddb-4ba3-a47e-2138df07db30
+2026-06-29 19:15:22 [http-nio-8080-exec-1] INFO  z.c.f.service.TyreRotationService - Found tracking: eb0d87f4-5ddb-4ba3-a47e-2138df07db30
+2026-06-29 19:15:23 [http-nio-8080-exec-1] INFO  z.c.f.service.TyreRotationService - Saved history: d5bee687-a87b-4222-b237-e2e1bb4a564b
+2026-06-29 19:15:23 [http-nio-8080-exec-1] INFO  z.c.f.service.TyreRotationService - About to save tracking after rotation
+2026-06-29 19:15:23 [http-nio-8080-exec-1] INFO  z.c.f.service.TyreRotationService - Recorded tyre rotation d5bee687-a87b-4222-b237-e2e1bb4a564b for tracking eb0d87f4-5ddb-4ba3-a47e-2138df07db30
+2026-06-29 19:15:23 [http-nio-8080-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 42804
+2026-06-29 19:15:23 [http-nio-8080-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: column "drivetrain_type" is of type drivetrain_type but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 92
+2026-06-29 19:15:23 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement [ERROR: column "drivetrain_type" is of type drivetrain_type but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 92] [update tyre_rotation_trackings set dismissed_at=?,dismissed_by_user_id=?,drivetrain_type=?,installation_odometer=?,is_active=?,is_dismissed=?,last_rotation_date=?,last_rotation_odometer=?,next_rotation_odometer=?,organization_id=?,rotation_count=?,rotation_interval_km=?,tyre_expense_id=?,updated_at=?,vehicle_id=? where id=?]; SQL [update tyre_rotation_trackings set dismissed_at=?,dismissed_by_user_id=?,drivetrain_type=?,installation_odometer=?,is_active=?,is_dismissed=?,last_rotation_date=?,last_rotation_odometer=?,next_rotation_odometer=?,organization_id=?,rotation_count=?,rotation_interval_km=?,tyre_expense_id=?,updated_at=?,vehicle_id=? where id=?]] with root cause
+org.postgresql.util.PSQLException: ERROR: column "drivetrain_type" is of type drivetrain_type but expression is of type character varying
+  Hint: You will need to rewrite or cast the expression.
+  Position: 92
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.doStaticUpdate(UpdateCoordinatorStandard.java:781)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.performUpdate(UpdateCoordinatorStandard.java:328)
+	at org.hibernate.persister.entity.mutation.UpdateCoordinatorStandard.update(UpdateCoordinatorStandard.java:245)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:169)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:633)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:500)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:385)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:487)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2324)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1981)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:663)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:413)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at za.co.fleetexpense.service.TyreRotationService$$SpringCGLIB$$0.recordRotation(<generated>)
+	at za.co.fleetexpense.controller.AlertsController.recordTyreRotation(AlertsController.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at za.co.fleetexpense.controller.AlertsController$$SpringCGLIB$$0.recordTyreRotation(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at za.co.fleetexpense.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:48)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-06-29 19:15:23 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /error
+2026-06-29 19:15:23 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /error
+2026-06-29 19:15:24 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-06-29 19:16:27 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/alerts/tyre-rotation/eb0d87f4-5ddb-4ba3-a47e-2138df07db30/rotate
+2026-06-29 19:16:27 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/alerts/tyre-rotation/eb0d87f4-5ddb-4ba3-a47e-2138df07db30/rotate
+2026-06-29 19:16:27 [http-nio-8080-exec-2] INFO  z.c.f.service.TyreRotationService - Starting recordRotation for tracking ID: eb0d87f4-5ddb-4ba3-a47e-2138df07db30
+2026-06-29 19:16:27 [http-nio-8080-exec-2] INFO  z.c.f.service.TyreRotationService - Found tracking: eb0d87f4-5ddb-4ba3-a47e-2138df07db30
+2026-06-29 19:16:27 [http-nio-8080-exec-2] INFO  z.c.f.service.TyreRotationService - Saved history: 088c1404-ba85-4158-a050-ff12275f0771
+2026-06-29 19:16:27 [http-nio-8080-exec-2] INFO  z.c.f.service.TyreRotationService - About to save tracking after rotation
+2026-06-29 19:16:27 [http-nio-8080-exec-2] INFO  z.c.f.service.TyreRotationService - Recorded tyre rotation 088c1404-ba85-4158-a050-ff12275f0771 for tracking eb0d87f4-5ddb-4ba3-a47e-2138df07db30
+2026-06-29 19:20:36 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:20:36 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:20:36 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/auth/me
+2026-06-29 19:20:36 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:20:36 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/alerts/tyre-rotation
+2026-06-29 19:20:36 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:20:36 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:20:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:20:36 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/auth/me
+2026-06-29 19:20:36 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/alerts/tyre-rotation
+2026-06-29 19:20:36 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:20:36 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/auth/me
+2026-06-29 19:20:36 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/alerts/tyre-rotation
+2026-06-29 19:20:36 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:20:36 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2655dfe9-6ffe-4295-9880-2bb318769674, itemType: TYRE_ROTATION, itemId: fbfc2c6b-053a-4291-bd37-137fab30bfaa, itemName: Tyre Rotation
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: ba9769ad-84a0-45c2-86c5-cdb292c5b011, itemType: TYRE_ROTATION, itemId: df038f1d-268d-49c4-91b0-e1e071e00501, itemName: Tyre Rotation
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 55a1cc7c-f8b4-497d-af4f-a9fa58b44358, itemType: VEHICLE_LICENSE, itemId: 858e4de7-1039-4c13-92ee-95cf3780a7d2, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 92a4e4fc-ec4c-431e-86f0-64eb4007aaec, itemType: VEHICLE_LICENSE, itemId: 6bdfedbb-7876-40c9-b6c2-023134ea9aa6, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: f9969888-30c8-4f7b-a7fe-277701b44602, itemType: VEHICLE_LICENSE, itemId: 43fb1d2a-4cdf-4974-b336-2abc117eb1f5, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 26a68003-298f-40c4-9bac-002623264695, itemType: VEHICLE_LICENSE, itemId: 2a0cd77c-739a-4045-a6bd-5606a3c82f8d, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d2951ef5-6b92-407f-9c49-7f1ee0047ac9, itemType: VEHICLE_LICENSE, itemId: 270e0568-7a93-4014-8779-9b4c636294af, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8066ac8b-3944-427e-8e33-e0b6497b3950, itemType: TRACKING_CONTRACT, itemId: 82653570-c4a5-4709-be9a-e213a36b3ae7, itemName: Tracking Device
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 9cddf971-497a-4100-b2dd-b777c700ab1d, itemType: TYRE_ROTATION, itemId: a5b8d362-c7af-42ba-8bdb-665841eb3875, itemName: Tyre Rotation
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 118f0e46-4b4b-4706-9bc4-dcdf0586ecdb, itemType: TYRE_ROTATION, itemId: da4cf9bd-4243-4641-96e5-852dc92eb2f9, itemName: Tyre Rotation
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: db67eca6-bab9-4de4-8129-55df545e054b, itemType: TYRE_ROTATION, itemId: 34988211-7e9f-4d5f-a0f7-d80cb853c718, itemName: Tyre Rotation
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b5e4d071-0469-443f-bd40-d48a5f253498, itemType: VEHICLE_LICENSE, itemId: 32450b41-ddf4-4d10-995e-505617156ecb, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 4b6a3b63-8560-4201-8a78-d47dd233b1d0, itemType: VEHICLE_LICENSE, itemId: 63227a50-62fe-4c56-9668-89dfb46d840a, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: fb3cefb6-70fb-49c2-af8c-b7c05b234234, itemType: VEHICLE_LICENSE, itemId: 8dec0e03-ec7c-48b5-8b24-7fe0e735a173, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 944345ee-b238-4b51-9cb1-409954ec5614, itemType: ROADWORTHY, itemId: 99093c10-1ec2-4ed4-979b-7e230bc56927, itemName: Roadworthy Certificate
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 068b89c4-c7b8-4c04-8d05-52ae03d9b922, itemType: ROADWORTHY, itemId: ec4ab7ae-b146-4e5d-92c6-bd0238642e89, itemName: Roadworthy Certificate
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: bcb7a1b3-0f68-4c13-ac34-d75229487fbc, itemType: ROADWORTHY, itemId: 853a311e-0e10-4281-8809-7a7fc161bafc, itemName: Roadworthy Certificate
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 209a4af3-aecb-4100-b956-8b82b46cab55, itemType: ROADWORTHY, itemId: 5d6f80cf-9712-4125-be86-418c5970e630, itemName: Roadworthy Certificate
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 395a0e1f-1f8b-4f7e-88b7-3fed1be38e06, itemType: INSURANCE, itemId: 70bf6cce-fc3e-482f-adc4-c655d8251464, itemName: Insurance Premium
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 94d653af-af0f-407a-93f0-253ace56eb9f, itemType: MECHANIC_SERVICE, itemId: 8c5aa220-2d67-4635-a2cb-d3cf442f8120, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 71891fa6-e139-4f45-afe7-707fafc7ce6c, itemType: MECHANIC_SERVICE, itemId: ec997071-5ebc-4f3f-9c59-9d414fea40a5, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 899b99bf-bdee-405b-ad98-835b1b5e508f, itemType: INSURANCE, itemId: f7dd84bc-058a-4eb5-bf44-c545ef1a3dfa, itemName: Insurance Premium
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: a666d273-f10d-4ee3-a6cf-0f315c85ba0f, itemType: VEHICLE_LICENSE, itemId: 5b4a9bea-bd4c-4464-9dc9-7ee45c51234c, itemName: Vehicle License Renewal
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2dc6f611-9137-4614-b967-feafd42968d7, itemType: INSURANCE, itemId: 48c53e03-7341-4025-89fc-91f45cd61961, itemName: Insurance Premium
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: a62b096b-a14e-4166-910c-f43848753d6c, itemType: INSURANCE, itemId: 7ebed43b-cb23-4d48-ba67-8b2d4e55d53e, itemName: Insurance Premium
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7fc10289-f336-4d57-922a-25a418d51ac5, itemType: INSURANCE, itemId: ea7b2183-198f-4619-86cb-ee571cef990d, itemName: Insurance Premium
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 482bb209-109e-497e-b459-896ddefc4b52, itemType: MECHANIC_SERVICE, itemId: 0c80e8e2-dca1-4890-958b-c321650536d5, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d6c24c68-7b8d-498d-80fe-91bd2982353f, itemType: TRACKING_CONTRACT, itemId: b9b55c97-ab5f-4d2a-9b64-93515c2036b3, itemName: Vehicle Tracking
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 6ecf6f83-b29d-42ce-a256-82b5a84ff2f7, itemType: INSURANCE, itemId: 647e0195-e803-4331-b14a-185b289e9468, itemName: Insurance Premium
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8b918cf2-3fe9-4f8a-852b-07bace3547b6, itemType: TRACKING_CONTRACT, itemId: 54d05c7f-e5c5-4f0f-9e44-d498469bf099, itemName: Vehicle Tracking
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8c3e4dcc-2956-4660-b46c-8b9b1e7ffb37, itemType: TRACKING_CONTRACT, itemId: 2feda3d3-3b59-42dd-b62a-f495aaca1cb2, itemName: Vehicle Tracking
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b8647c4c-73e0-426f-8868-57161231649b, itemType: MECHANIC_SERVICE, itemId: 5c516f6b-1e24-465a-a9f0-197bbacbc353, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 400730e9-fbb9-44a5-b694-40807748b45c, itemType: MECHANIC_SERVICE, itemId: 9da6c992-efd1-40a6-beb3-5fb6d85e4718, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2ce25224-7769-4101-bbeb-f43013f829c2, itemType: TRACKING_CONTRACT, itemId: fb394717-2f7f-40d9-a32b-90ff10774909, itemName: Vehicle Tracking
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: dc58106d-64cd-4262-b229-ed8272d1a4d5, itemType: MECHANIC_SERVICE, itemId: efe2511f-5f98-41ff-ae7b-9b2c08bf0a68, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 4eac2da9-e168-43be-981e-287c258003f3, itemType: TRACKING_CONTRACT, itemId: 7595d26c-d6af-46fa-a6fc-57da91790364, itemName: Vehicle Tracking
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: cb72fbe4-db0d-4bed-a42f-942fd160b2be, itemType: MECHANIC_SERVICE, itemId: 8e8b7356-d903-4181-b9a1-ab46904fa1ec, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7c34b286-7f0d-4661-9818-90d140eaa824, itemType: MECHANIC_SERVICE, itemId: 48e0a57c-26a3-4a0b-a11b-45f96673bb1a, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 161f2873-2312-4bd9-bc12-67c870362a40, itemType: MECHANIC_SERVICE, itemId: c4178ed0-1b51-4bc3-9ff4-e9433ca2244d, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: af2d9699-8fd5-48a8-8c0f-e7c2ce63e109, itemType: ROADWORTHY, itemId: f57b413b-dc3e-4b2b-97c6-11e87ab0150e, itemName: Roadworthy Certificate
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 128d8627-8d76-46b3-ae6f-5a014ad7d015, itemType: MECHANIC_SERVICE, itemId: 3d5e6938-a6e0-43c6-914e-d46cc9fccb13, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d2e35fe1-ea28-4b30-9010-72201eebab27, itemType: MECHANIC_SERVICE, itemId: a7e31269-fc42-4d0a-8f5c-b480d4ca15c5, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 78b24563-10ad-40fd-be82-9419d0d44756, itemType: MECHANIC_SERVICE, itemId: 946ce20d-cc88-4c8f-9740-2cf9a41beab5, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2e62efe6-d3e0-4d1e-aef9-6d91d1e2a96b, itemType: MECHANIC_SERVICE, itemId: fcfd27b5-8d23-4506-acfb-3355107c3c0c, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b8e7809a-f0c4-4d53-982d-7702331ebbd6, itemType: TYRE_PURCHASE, itemId: 768c6991-68e7-4607-bcb1-6394c0db784c, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 3a1ef986-b26d-4f0b-8a27-664aceebaf19, itemType: TYRE_PURCHASE, itemId: da52bc61-f176-4fba-88be-e0b27b2e0b19, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 570ad643-a5bd-42de-96d7-dbcbf88d9643, itemType: TYRE_PURCHASE, itemId: de7ce175-a11e-40d1-8ce4-6e37a3df7596, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 5f8c68a1-2711-40ff-9870-b8ffbd547767, itemType: TYRE_PURCHASE, itemId: 3e09a300-ac94-413b-b90f-f0ab6c7347b8, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 60128630-99ff-44ba-89ad-fcdd5c25e2d6, itemType: TYRE_PURCHASE, itemId: be8649a0-4a44-4d71-8c6c-c540b39e353c, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 9d080167-c124-4215-abe1-5a4d572b861d, itemType: TYRE_PURCHASE, itemId: 01457454-6e00-42ab-a8e9-b0655eb599ce, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 057384b8-eb3b-416c-8d34-1dca12d26fbb, itemType: TYRE_PURCHASE, itemId: 9ef6e983-a600-4c53-83c8-1b261cdb6f42, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 033ae5d4-1c18-477b-94fe-53bec330ca3d, itemType: TYRE_PURCHASE, itemId: 60ee0304-6627-44a1-b80e-fc40ce08d15f, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7fbf2d2b-573e-49e2-80c1-68aeaa6bd254, itemType: TYRE_PURCHASE, itemId: 735f35e1-37ac-45a0-930f-e9302d13cac0, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 535a1012-b7b6-42c8-a7dd-2851817f859e, itemType: TYRE_PURCHASE, itemId: 4d3601bf-270d-4611-adb3-a97b8efaafe8, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 1697ac80-9c33-47e8-bacc-d740761f2851, itemType: TYRE_PURCHASE, itemId: 6cdaa5de-f37d-46df-b109-2b0d0d3927fd, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 560ff5af-6fcf-43b4-a8a1-1f70d6e9783d, itemType: TRACKING_CONTRACT, itemId: e1450401-761c-4e48-9682-86c33735fe8a, itemName: Vehicle Tracking
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d5ca501b-d980-49f1-9084-b2b4b627fd74, itemType: DRIVERS_LICENSE, itemId: 2bf15cb7-ba3b-46de-9d7f-d0f9017e2bc7, itemName: Driver's License
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 63a9cf8b-1bb7-4dca-b70b-60e8a66e67d3, itemType: DRIVERS_LICENSE, itemId: 2aa5d867-a9d8-4cda-a046-c163a8a3df8d, itemName: Driver's License
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: bb102dab-797d-4863-a6c0-01b967cb8f1c, itemType: TYRE_PURCHASE, itemId: b7c8c54c-1805-4ef8-9f62-360ea32ce798, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 57c61b71-60b6-4086-9e5b-752d07990082, itemType: TYRE_PURCHASE, itemId: 56a8e2ee-8e26-4d03-9724-5bf4af96339a, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 0ebbc38c-cfd1-4138-a8bb-b47cf34f4f75, itemType: TYRE_PURCHASE, itemId: 7d4dd617-a512-4db9-8f27-71dd176ba258, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: dd5d51e1-49e8-4aff-ab4e-8c71c60775b7, itemType: TYRE_PURCHASE, itemId: 219a4a15-d5a3-46d5-b7ac-29b861d08893, itemName: Tyre Replacement
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 68ad23e9-2790-4c08-9288-1ff27f450fc3, itemType: ROADWORTHY, itemId: 7c858172-e229-4f95-b7e6-9f1a39f51531, itemName: Roadworthy Certificate
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 5d43ec7f-2ace-40e0-8785-8e60e79270fd, itemType: MECHANIC_SERVICE, itemId: 9f1ead78-f3b5-4a07-b2f7-067cb136f7fd, itemName: Mechanic Service
+2026-06-29 19:20:37 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2f5d632d-f7d4-44fd-953b-bf78ae6a0a9a, itemType: MECHANIC_SERVICE, itemId: d0ab5a73-1ef7-4554-bfaf-44bdf1253522, itemName: Mechanic Service
+2026-06-29 19:20:38 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:20:38 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:20:38 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:20:38 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:20:38 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:20:38 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:20:38 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:20:38 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:20:38 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:20:38 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:20:38 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:20:38 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:38 [http-nio-8080-exec-8] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:20:38 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:20:38 [http-nio-8080-exec-8] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:20:38 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:20:39 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:39 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:39 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:39 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:20:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:20:39 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:20:42 [http-nio-8080-exec-8] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:20:42 [http-nio-8080-exec-8] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:21:16 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:21:16 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:21:16 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:21:16 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:21:16 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:21:16 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:21:16 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:21:16 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:21:16 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:21:16 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:21:16 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:21:16 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:21:16 [http-nio-8080-exec-5] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:21:16 [http-nio-8080-exec-5] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:21:16 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:21:16 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:21:16 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:21:16 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:21:19 [http-nio-8080-exec-5] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:21:19 [http-nio-8080-exec-5] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:21:19 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:21:19 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:21:19 [http-nio-8080-exec-7] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:21:19 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:21:21 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:21:21 [http-nio-8080-exec-7] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:21:43 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:21:43 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:21:43 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:21:43 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:21:43 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:21:43 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:21:43 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:21:44 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:21:44 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:21:44 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/entry-images/entry/EXPENSE/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:21:44 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/entry-images/entry/EXPENSE/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:21:44 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/entry-images/entry/EXPENSE/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:21:44 [http-nio-8080-exec-9] INFO  z.c.f.service.EntryImageService - Found 1 entry images for EXPENSE 6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:21:45 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /uploads/entry-images/c9001198-7561-4d76-9ba4-78604e17d945.avif
+2026-06-29 19:21:45 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-06-29 19:21:45 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /uploads/entry-images/c9001198-7561-4d76-9ba4-78604e17d945.avif
+2026-06-29 19:22:32 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/tyres/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:32 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/v1/expenses/tyres/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:32 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/v1/expenses/tyres/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:33 [http-nio-8080-exec-3] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity za.co.fleetexpense.controller.ExpenseController.updateTyreExpense(java.util.UUID,java.lang.String,org.springframework.web.multipart.MultipartFile,za.co.fleetexpense.security.UserPrincipal); target is of class [za.co.fleetexpense.controller.ExpenseController]
+2026-06-29 19:22:33 [http-nio-8080-exec-3] DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor - Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity za.co.fleetexpense.controller.ExpenseController.updateTyreExpense(java.util.UUID,java.lang.String,org.springframework.web.multipart.MultipartFile,za.co.fleetexpense.security.UserPrincipal); target is of class [za.co.fleetexpense.controller.ExpenseController]
+2026-06-29 19:22:33 [http-nio-8080-exec-3] INFO  z.c.f.service.TyreRotationService - Updated tyre rotation tracking 6a6c7277-ad5c-4cea-9caa-7a3afc4ae6e4 for tyre expense 6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:33 [http-nio-8080-exec-3] INFO  z.c.f.service.ExpenseService - Updated tyre expense 6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:42 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:42 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:42 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:42 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:42 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:42 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 19:22:47 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:22:47 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:22:47 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:22:47 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:22:47 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:22:47 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:22:47 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:22:47 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:22:47 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:22:47 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:22:47 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:22:47 [http-nio-8080-exec-10] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:22:47 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:22:47 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:22:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:22:47 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:22:47 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:22:47 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:22:48 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:22:48 [http-nio-8080-exec-10] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:22:48 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:22:48 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:22:48 [http-nio-8080-exec-6] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:22:48 [http-nio-8080-exec-6] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:22:49 [http-nio-8080-exec-6] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:22:50 [http-nio-8080-exec-6] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:23:00 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:23:00 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:23:00 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:23:00 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:23:00 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:23:00 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:23:00 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:23:00 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:23:00 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:23:00 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:23:00 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:23:01 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:01 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:23:01 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:23:01 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:23:01 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:23:01 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:01 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:23:01 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:23:01 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:01 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:23:01 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:23:01 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:23:02 [http-nio-8080-exec-3] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:23:02 [http-nio-8080-exec-3] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:23:02 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:23:02 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:23:02 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:23:02 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:23:02 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats/consumption-alert
+2026-06-29 19:23:02 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer/status/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:23:02 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:23:02 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/fuel-logs/vehicle/1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer?taxYear=2026
+2026-06-29 19:23:02 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/trips/summary?vehicleId=1a5a214c-2971-4409-b983-72849019dfd4
+2026-06-29 19:23:02 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/1a5a214c-2971-4409-b983-72849019dfd4/fuel-stats
+2026-06-29 19:23:04 [http-nio-8080-exec-3] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:23:04 [http-nio-8080-exec-3] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:23:04 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:23:04 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:23:04 [http-nio-8080-exec-10] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:23:04 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:23:06 [http-nio-8080-exec-10] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:23:06 [http-nio-8080-exec-10] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:23:28 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:23:28 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles/8e03d31b-7504-427f-9016-cdee8d3b353a/fuel-stats/consumption-alert
+2026-06-29 19:23:28 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles/8e03d31b-7504-427f-9016-cdee8d3b353a/fuel-stats
+2026-06-29 19:23:28 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/compliance/odometer/status/8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:23:28 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/trips/summary?vehicleId=8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/8e03d31b-7504-427f-9016-cdee8d3b353a/fuel-stats/consumption-alert
+2026-06-29 19:23:28 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles/8e03d31b-7504-427f-9016-cdee8d3b353a/fuel-stats
+2026-06-29 19:23:28 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/fuel-logs/vehicle/8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/compliance/odometer/status/8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/trips/summary?vehicleId=8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/fuel-logs/vehicle/8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/trips/summary?vehicleId=8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/8e03d31b-7504-427f-9016-cdee8d3b353a/fuel-stats
+2026-06-29 19:23:28 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles/8e03d31b-7504-427f-9016-cdee8d3b353a/fuel-stats/consumption-alert
+2026-06-29 19:23:28 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/fuel-logs/vehicle/8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:28 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/compliance/odometer/status/8e03d31b-7504-427f-9016-cdee8d3b353a
+2026-06-29 19:23:29 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:23:29 [http-nio-8080-exec-8] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:23:29 [http-nio-8080-exec-8] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:23:31 [http-nio-8080-exec-8] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:23:31 [http-nio-8080-exec-8] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:23:50 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/alerts/expiry/dismiss
+2026-06-29 19:23:50 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/alerts/expiry/dismiss
+2026-06-29 19:23:50 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/alerts/expiry/dismiss
+2026-06-29 19:23:50 [http-nio-8080-exec-7] INFO  z.c.f.controller.AlertsController - Dismiss request - itemType: TYRE_PURCHASE, itemId: 768c6991-68e7-4607-bcb1-6394c0db784c, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484
+2026-06-29 19:23:50 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Dismissed expiry alert for item type TYRE_PURCHASE and item id 768c6991-68e7-4607-bcb1-6394c0db784c
+2026-06-29 19:23:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:23:50 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:23:50 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2655dfe9-6ffe-4295-9880-2bb318769674, itemType: TYRE_ROTATION, itemId: fbfc2c6b-053a-4291-bd37-137fab30bfaa, itemName: Tyre Rotation
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 381eb3e5-6bb4-4b06-90d3-787f7d261392, itemType: TYRE_PURCHASE, itemId: 6cdaa5de-f37d-46df-b109-2b0d0d3927fd, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: ba9769ad-84a0-45c2-86c5-cdb292c5b011, itemType: TYRE_ROTATION, itemId: df038f1d-268d-49c4-91b0-e1e071e00501, itemName: Tyre Rotation
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 55a1cc7c-f8b4-497d-af4f-a9fa58b44358, itemType: VEHICLE_LICENSE, itemId: 858e4de7-1039-4c13-92ee-95cf3780a7d2, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 92a4e4fc-ec4c-431e-86f0-64eb4007aaec, itemType: VEHICLE_LICENSE, itemId: 6bdfedbb-7876-40c9-b6c2-023134ea9aa6, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: f9969888-30c8-4f7b-a7fe-277701b44602, itemType: VEHICLE_LICENSE, itemId: 43fb1d2a-4cdf-4974-b336-2abc117eb1f5, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 26a68003-298f-40c4-9bac-002623264695, itemType: VEHICLE_LICENSE, itemId: 2a0cd77c-739a-4045-a6bd-5606a3c82f8d, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d2951ef5-6b92-407f-9c49-7f1ee0047ac9, itemType: VEHICLE_LICENSE, itemId: 270e0568-7a93-4014-8779-9b4c636294af, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8066ac8b-3944-427e-8e33-e0b6497b3950, itemType: TRACKING_CONTRACT, itemId: 82653570-c4a5-4709-be9a-e213a36b3ae7, itemName: Tracking Device
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 9cddf971-497a-4100-b2dd-b777c700ab1d, itemType: TYRE_ROTATION, itemId: a5b8d362-c7af-42ba-8bdb-665841eb3875, itemName: Tyre Rotation
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 118f0e46-4b4b-4706-9bc4-dcdf0586ecdb, itemType: TYRE_ROTATION, itemId: da4cf9bd-4243-4641-96e5-852dc92eb2f9, itemName: Tyre Rotation
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: db67eca6-bab9-4de4-8129-55df545e054b, itemType: TYRE_ROTATION, itemId: 34988211-7e9f-4d5f-a0f7-d80cb853c718, itemName: Tyre Rotation
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b5e4d071-0469-443f-bd40-d48a5f253498, itemType: VEHICLE_LICENSE, itemId: 32450b41-ddf4-4d10-995e-505617156ecb, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 4b6a3b63-8560-4201-8a78-d47dd233b1d0, itemType: VEHICLE_LICENSE, itemId: 63227a50-62fe-4c56-9668-89dfb46d840a, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: fb3cefb6-70fb-49c2-af8c-b7c05b234234, itemType: VEHICLE_LICENSE, itemId: 8dec0e03-ec7c-48b5-8b24-7fe0e735a173, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 944345ee-b238-4b51-9cb1-409954ec5614, itemType: ROADWORTHY, itemId: 99093c10-1ec2-4ed4-979b-7e230bc56927, itemName: Roadworthy Certificate
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 068b89c4-c7b8-4c04-8d05-52ae03d9b922, itemType: ROADWORTHY, itemId: ec4ab7ae-b146-4e5d-92c6-bd0238642e89, itemName: Roadworthy Certificate
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: bcb7a1b3-0f68-4c13-ac34-d75229487fbc, itemType: ROADWORTHY, itemId: 853a311e-0e10-4281-8809-7a7fc161bafc, itemName: Roadworthy Certificate
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 209a4af3-aecb-4100-b956-8b82b46cab55, itemType: ROADWORTHY, itemId: 5d6f80cf-9712-4125-be86-418c5970e630, itemName: Roadworthy Certificate
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 395a0e1f-1f8b-4f7e-88b7-3fed1be38e06, itemType: INSURANCE, itemId: 70bf6cce-fc3e-482f-adc4-c655d8251464, itemName: Insurance Premium
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 94d653af-af0f-407a-93f0-253ace56eb9f, itemType: MECHANIC_SERVICE, itemId: 8c5aa220-2d67-4635-a2cb-d3cf442f8120, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 71891fa6-e139-4f45-afe7-707fafc7ce6c, itemType: MECHANIC_SERVICE, itemId: ec997071-5ebc-4f3f-9c59-9d414fea40a5, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 899b99bf-bdee-405b-ad98-835b1b5e508f, itemType: INSURANCE, itemId: f7dd84bc-058a-4eb5-bf44-c545ef1a3dfa, itemName: Insurance Premium
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: a666d273-f10d-4ee3-a6cf-0f315c85ba0f, itemType: VEHICLE_LICENSE, itemId: 5b4a9bea-bd4c-4464-9dc9-7ee45c51234c, itemName: Vehicle License Renewal
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2dc6f611-9137-4614-b967-feafd42968d7, itemType: INSURANCE, itemId: 48c53e03-7341-4025-89fc-91f45cd61961, itemName: Insurance Premium
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: a62b096b-a14e-4166-910c-f43848753d6c, itemType: INSURANCE, itemId: 7ebed43b-cb23-4d48-ba67-8b2d4e55d53e, itemName: Insurance Premium
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7fc10289-f336-4d57-922a-25a418d51ac5, itemType: INSURANCE, itemId: ea7b2183-198f-4619-86cb-ee571cef990d, itemName: Insurance Premium
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 482bb209-109e-497e-b459-896ddefc4b52, itemType: MECHANIC_SERVICE, itemId: 0c80e8e2-dca1-4890-958b-c321650536d5, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d6c24c68-7b8d-498d-80fe-91bd2982353f, itemType: TRACKING_CONTRACT, itemId: b9b55c97-ab5f-4d2a-9b64-93515c2036b3, itemName: Vehicle Tracking
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 6ecf6f83-b29d-42ce-a256-82b5a84ff2f7, itemType: INSURANCE, itemId: 647e0195-e803-4331-b14a-185b289e9468, itemName: Insurance Premium
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8b918cf2-3fe9-4f8a-852b-07bace3547b6, itemType: TRACKING_CONTRACT, itemId: 54d05c7f-e5c5-4f0f-9e44-d498469bf099, itemName: Vehicle Tracking
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8c3e4dcc-2956-4660-b46c-8b9b1e7ffb37, itemType: TRACKING_CONTRACT, itemId: 2feda3d3-3b59-42dd-b62a-f495aaca1cb2, itemName: Vehicle Tracking
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b8647c4c-73e0-426f-8868-57161231649b, itemType: MECHANIC_SERVICE, itemId: 5c516f6b-1e24-465a-a9f0-197bbacbc353, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 400730e9-fbb9-44a5-b694-40807748b45c, itemType: MECHANIC_SERVICE, itemId: 9da6c992-efd1-40a6-beb3-5fb6d85e4718, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2ce25224-7769-4101-bbeb-f43013f829c2, itemType: TRACKING_CONTRACT, itemId: fb394717-2f7f-40d9-a32b-90ff10774909, itemName: Vehicle Tracking
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: dc58106d-64cd-4262-b229-ed8272d1a4d5, itemType: MECHANIC_SERVICE, itemId: efe2511f-5f98-41ff-ae7b-9b2c08bf0a68, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 4eac2da9-e168-43be-981e-287c258003f3, itemType: TRACKING_CONTRACT, itemId: 7595d26c-d6af-46fa-a6fc-57da91790364, itemName: Vehicle Tracking
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: cb72fbe4-db0d-4bed-a42f-942fd160b2be, itemType: MECHANIC_SERVICE, itemId: 8e8b7356-d903-4181-b9a1-ab46904fa1ec, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7c34b286-7f0d-4661-9818-90d140eaa824, itemType: MECHANIC_SERVICE, itemId: 48e0a57c-26a3-4a0b-a11b-45f96673bb1a, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 161f2873-2312-4bd9-bc12-67c870362a40, itemType: MECHANIC_SERVICE, itemId: c4178ed0-1b51-4bc3-9ff4-e9433ca2244d, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: af2d9699-8fd5-48a8-8c0f-e7c2ce63e109, itemType: ROADWORTHY, itemId: f57b413b-dc3e-4b2b-97c6-11e87ab0150e, itemName: Roadworthy Certificate
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 128d8627-8d76-46b3-ae6f-5a014ad7d015, itemType: MECHANIC_SERVICE, itemId: 3d5e6938-a6e0-43c6-914e-d46cc9fccb13, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d2e35fe1-ea28-4b30-9010-72201eebab27, itemType: MECHANIC_SERVICE, itemId: a7e31269-fc42-4d0a-8f5c-b480d4ca15c5, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 78b24563-10ad-40fd-be82-9419d0d44756, itemType: MECHANIC_SERVICE, itemId: 946ce20d-cc88-4c8f-9740-2cf9a41beab5, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2e62efe6-d3e0-4d1e-aef9-6d91d1e2a96b, itemType: MECHANIC_SERVICE, itemId: fcfd27b5-8d23-4506-acfb-3355107c3c0c, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 3a1ef986-b26d-4f0b-8a27-664aceebaf19, itemType: TYRE_PURCHASE, itemId: da52bc61-f176-4fba-88be-e0b27b2e0b19, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 570ad643-a5bd-42de-96d7-dbcbf88d9643, itemType: TYRE_PURCHASE, itemId: de7ce175-a11e-40d1-8ce4-6e37a3df7596, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 5f8c68a1-2711-40ff-9870-b8ffbd547767, itemType: TYRE_PURCHASE, itemId: 3e09a300-ac94-413b-b90f-f0ab6c7347b8, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 60128630-99ff-44ba-89ad-fcdd5c25e2d6, itemType: TYRE_PURCHASE, itemId: be8649a0-4a44-4d71-8c6c-c540b39e353c, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 9d080167-c124-4215-abe1-5a4d572b861d, itemType: TYRE_PURCHASE, itemId: 01457454-6e00-42ab-a8e9-b0655eb599ce, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 057384b8-eb3b-416c-8d34-1dca12d26fbb, itemType: TYRE_PURCHASE, itemId: 9ef6e983-a600-4c53-83c8-1b261cdb6f42, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 033ae5d4-1c18-477b-94fe-53bec330ca3d, itemType: TYRE_PURCHASE, itemId: 60ee0304-6627-44a1-b80e-fc40ce08d15f, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7fbf2d2b-573e-49e2-80c1-68aeaa6bd254, itemType: TYRE_PURCHASE, itemId: 735f35e1-37ac-45a0-930f-e9302d13cac0, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 535a1012-b7b6-42c8-a7dd-2851817f859e, itemType: TYRE_PURCHASE, itemId: 4d3601bf-270d-4611-adb3-a97b8efaafe8, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 560ff5af-6fcf-43b4-a8a1-1f70d6e9783d, itemType: TRACKING_CONTRACT, itemId: e1450401-761c-4e48-9682-86c33735fe8a, itemName: Vehicle Tracking
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d5ca501b-d980-49f1-9084-b2b4b627fd74, itemType: DRIVERS_LICENSE, itemId: 2bf15cb7-ba3b-46de-9d7f-d0f9017e2bc7, itemName: Driver's License
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 63a9cf8b-1bb7-4dca-b70b-60e8a66e67d3, itemType: DRIVERS_LICENSE, itemId: 2aa5d867-a9d8-4cda-a046-c163a8a3df8d, itemName: Driver's License
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: bb102dab-797d-4863-a6c0-01b967cb8f1c, itemType: TYRE_PURCHASE, itemId: b7c8c54c-1805-4ef8-9f62-360ea32ce798, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 57c61b71-60b6-4086-9e5b-752d07990082, itemType: TYRE_PURCHASE, itemId: 56a8e2ee-8e26-4d03-9724-5bf4af96339a, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 0ebbc38c-cfd1-4138-a8bb-b47cf34f4f75, itemType: TYRE_PURCHASE, itemId: 7d4dd617-a512-4db9-8f27-71dd176ba258, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: dd5d51e1-49e8-4aff-ab4e-8c71c60775b7, itemType: TYRE_PURCHASE, itemId: 219a4a15-d5a3-46d5-b7ac-29b861d08893, itemName: Tyre Replacement
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 68ad23e9-2790-4c08-9288-1ff27f450fc3, itemType: ROADWORTHY, itemId: 7c858172-e229-4f95-b7e6-9f1a39f51531, itemName: Roadworthy Certificate
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 5d43ec7f-2ace-40e0-8785-8e60e79270fd, itemType: MECHANIC_SERVICE, itemId: 9f1ead78-f3b5-4a07-b2f7-067cb136f7fd, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2f5d632d-f7d4-44fd-953b-bf78ae6a0a9a, itemType: MECHANIC_SERVICE, itemId: d0ab5a73-1ef7-4554-bfaf-44bdf1253522, itemName: Mechanic Service
+2026-06-29 19:23:50 [http-nio-8080-exec-1] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b8e7809a-f0c4-4d53-982d-7702331ebbd6, itemType: TYRE_PURCHASE, itemId: 768c6991-68e7-4607-bcb1-6394c0db784c, itemName: Tyre Replacement
+2026-06-29 19:24:22 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:24:22 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:24:22 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:24:22 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:24:22 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses
+2026-06-29 19:24:22 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 19:24:22 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:24:22 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:24:22 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/categories
+2026-06-29 19:24:22 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:24:22 [http-nio-8080-exec-4] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:24:22 [http-nio-8080-exec-4] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:24:22 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:24:22 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:24:22 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/categories
+2026-06-29 19:24:22 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/categories
+2026-06-29 19:24:22 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 19:24:22 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 19:24:24 [http-nio-8080-exec-4] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:24:24 [http-nio-8080-exec-4] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:24:24 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses
+2026-06-29 19:24:24 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses
+2026-06-29 19:24:24 [http-nio-8080-exec-3] INFO  z.c.f.controller.ExpenseController - GET /expenses - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO, category: null, vehicleId: null, startDate: null, endDate: null
+2026-06-29 19:24:24 [http-nio-8080-exec-3] INFO  z.c.f.service.ExpenseService - getAllByOrganization - orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484, role: ADMIN, organizationMode: SOLO
+2026-06-29 19:24:26 [http-nio-8080-exec-3] INFO  z.c.f.service.ExpenseService - Found 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:24:26 [http-nio-8080-exec-3] INFO  z.c.f.controller.ExpenseController - Returning 92 expenses for orgId: faae0fb1-3a71-476c-9f98-10bf811a7fd8
+2026-06-29 19:24:59 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/alerts/expiry/dismiss
+2026-06-29 19:24:59 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/v1/alerts/expiry/dismiss
+2026-06-29 19:24:59 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/v1/alerts/expiry/dismiss
+2026-06-29 19:24:59 [http-nio-8080-exec-9] INFO  z.c.f.controller.AlertsController - Dismiss request - itemType: TYRE_PURCHASE, itemId: da52bc61-f176-4fba-88be-e0b27b2e0b19, userId: c8061ec4-99d5-4362-a6e7-4c6e5b581484
+2026-06-29 19:24:59 [http-nio-8080-exec-9] INFO  z.c.f.service.ExpiryAlertService - Dismissed expiry alert for item type TYRE_PURCHASE and item id da52bc61-f176-4fba-88be-e0b27b2e0b19
+2026-06-29 19:24:59 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:24:59 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:24:59 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/alerts/expiry?includeDismissed=true
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2655dfe9-6ffe-4295-9880-2bb318769674, itemType: TYRE_ROTATION, itemId: fbfc2c6b-053a-4291-bd37-137fab30bfaa, itemName: Tyre Rotation
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 381eb3e5-6bb4-4b06-90d3-787f7d261392, itemType: TYRE_PURCHASE, itemId: 6cdaa5de-f37d-46df-b109-2b0d0d3927fd, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: ba9769ad-84a0-45c2-86c5-cdb292c5b011, itemType: TYRE_ROTATION, itemId: df038f1d-268d-49c4-91b0-e1e071e00501, itemName: Tyre Rotation
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 55a1cc7c-f8b4-497d-af4f-a9fa58b44358, itemType: VEHICLE_LICENSE, itemId: 858e4de7-1039-4c13-92ee-95cf3780a7d2, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 92a4e4fc-ec4c-431e-86f0-64eb4007aaec, itemType: VEHICLE_LICENSE, itemId: 6bdfedbb-7876-40c9-b6c2-023134ea9aa6, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: f9969888-30c8-4f7b-a7fe-277701b44602, itemType: VEHICLE_LICENSE, itemId: 43fb1d2a-4cdf-4974-b336-2abc117eb1f5, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 26a68003-298f-40c4-9bac-002623264695, itemType: VEHICLE_LICENSE, itemId: 2a0cd77c-739a-4045-a6bd-5606a3c82f8d, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d2951ef5-6b92-407f-9c49-7f1ee0047ac9, itemType: VEHICLE_LICENSE, itemId: 270e0568-7a93-4014-8779-9b4c636294af, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8066ac8b-3944-427e-8e33-e0b6497b3950, itemType: TRACKING_CONTRACT, itemId: 82653570-c4a5-4709-be9a-e213a36b3ae7, itemName: Tracking Device
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 9cddf971-497a-4100-b2dd-b777c700ab1d, itemType: TYRE_ROTATION, itemId: a5b8d362-c7af-42ba-8bdb-665841eb3875, itemName: Tyre Rotation
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 118f0e46-4b4b-4706-9bc4-dcdf0586ecdb, itemType: TYRE_ROTATION, itemId: da4cf9bd-4243-4641-96e5-852dc92eb2f9, itemName: Tyre Rotation
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: db67eca6-bab9-4de4-8129-55df545e054b, itemType: TYRE_ROTATION, itemId: 34988211-7e9f-4d5f-a0f7-d80cb853c718, itemName: Tyre Rotation
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b5e4d071-0469-443f-bd40-d48a5f253498, itemType: VEHICLE_LICENSE, itemId: 32450b41-ddf4-4d10-995e-505617156ecb, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 4b6a3b63-8560-4201-8a78-d47dd233b1d0, itemType: VEHICLE_LICENSE, itemId: 63227a50-62fe-4c56-9668-89dfb46d840a, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: fb3cefb6-70fb-49c2-af8c-b7c05b234234, itemType: VEHICLE_LICENSE, itemId: 8dec0e03-ec7c-48b5-8b24-7fe0e735a173, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 944345ee-b238-4b51-9cb1-409954ec5614, itemType: ROADWORTHY, itemId: 99093c10-1ec2-4ed4-979b-7e230bc56927, itemName: Roadworthy Certificate
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 068b89c4-c7b8-4c04-8d05-52ae03d9b922, itemType: ROADWORTHY, itemId: ec4ab7ae-b146-4e5d-92c6-bd0238642e89, itemName: Roadworthy Certificate
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: bcb7a1b3-0f68-4c13-ac34-d75229487fbc, itemType: ROADWORTHY, itemId: 853a311e-0e10-4281-8809-7a7fc161bafc, itemName: Roadworthy Certificate
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 209a4af3-aecb-4100-b956-8b82b46cab55, itemType: ROADWORTHY, itemId: 5d6f80cf-9712-4125-be86-418c5970e630, itemName: Roadworthy Certificate
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 395a0e1f-1f8b-4f7e-88b7-3fed1be38e06, itemType: INSURANCE, itemId: 70bf6cce-fc3e-482f-adc4-c655d8251464, itemName: Insurance Premium
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 94d653af-af0f-407a-93f0-253ace56eb9f, itemType: MECHANIC_SERVICE, itemId: 8c5aa220-2d67-4635-a2cb-d3cf442f8120, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 71891fa6-e139-4f45-afe7-707fafc7ce6c, itemType: MECHANIC_SERVICE, itemId: ec997071-5ebc-4f3f-9c59-9d414fea40a5, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 899b99bf-bdee-405b-ad98-835b1b5e508f, itemType: INSURANCE, itemId: f7dd84bc-058a-4eb5-bf44-c545ef1a3dfa, itemName: Insurance Premium
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: a666d273-f10d-4ee3-a6cf-0f315c85ba0f, itemType: VEHICLE_LICENSE, itemId: 5b4a9bea-bd4c-4464-9dc9-7ee45c51234c, itemName: Vehicle License Renewal
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2dc6f611-9137-4614-b967-feafd42968d7, itemType: INSURANCE, itemId: 48c53e03-7341-4025-89fc-91f45cd61961, itemName: Insurance Premium
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: a62b096b-a14e-4166-910c-f43848753d6c, itemType: INSURANCE, itemId: 7ebed43b-cb23-4d48-ba67-8b2d4e55d53e, itemName: Insurance Premium
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7fc10289-f336-4d57-922a-25a418d51ac5, itemType: INSURANCE, itemId: ea7b2183-198f-4619-86cb-ee571cef990d, itemName: Insurance Premium
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 482bb209-109e-497e-b459-896ddefc4b52, itemType: MECHANIC_SERVICE, itemId: 0c80e8e2-dca1-4890-958b-c321650536d5, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d6c24c68-7b8d-498d-80fe-91bd2982353f, itemType: TRACKING_CONTRACT, itemId: b9b55c97-ab5f-4d2a-9b64-93515c2036b3, itemName: Vehicle Tracking
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 6ecf6f83-b29d-42ce-a256-82b5a84ff2f7, itemType: INSURANCE, itemId: 647e0195-e803-4331-b14a-185b289e9468, itemName: Insurance Premium
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8b918cf2-3fe9-4f8a-852b-07bace3547b6, itemType: TRACKING_CONTRACT, itemId: 54d05c7f-e5c5-4f0f-9e44-d498469bf099, itemName: Vehicle Tracking
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 8c3e4dcc-2956-4660-b46c-8b9b1e7ffb37, itemType: TRACKING_CONTRACT, itemId: 2feda3d3-3b59-42dd-b62a-f495aaca1cb2, itemName: Vehicle Tracking
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b8647c4c-73e0-426f-8868-57161231649b, itemType: MECHANIC_SERVICE, itemId: 5c516f6b-1e24-465a-a9f0-197bbacbc353, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 400730e9-fbb9-44a5-b694-40807748b45c, itemType: MECHANIC_SERVICE, itemId: 9da6c992-efd1-40a6-beb3-5fb6d85e4718, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2ce25224-7769-4101-bbeb-f43013f829c2, itemType: TRACKING_CONTRACT, itemId: fb394717-2f7f-40d9-a32b-90ff10774909, itemName: Vehicle Tracking
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: dc58106d-64cd-4262-b229-ed8272d1a4d5, itemType: MECHANIC_SERVICE, itemId: efe2511f-5f98-41ff-ae7b-9b2c08bf0a68, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 4eac2da9-e168-43be-981e-287c258003f3, itemType: TRACKING_CONTRACT, itemId: 7595d26c-d6af-46fa-a6fc-57da91790364, itemName: Vehicle Tracking
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: cb72fbe4-db0d-4bed-a42f-942fd160b2be, itemType: MECHANIC_SERVICE, itemId: 8e8b7356-d903-4181-b9a1-ab46904fa1ec, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7c34b286-7f0d-4661-9818-90d140eaa824, itemType: MECHANIC_SERVICE, itemId: 48e0a57c-26a3-4a0b-a11b-45f96673bb1a, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 161f2873-2312-4bd9-bc12-67c870362a40, itemType: MECHANIC_SERVICE, itemId: c4178ed0-1b51-4bc3-9ff4-e9433ca2244d, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: af2d9699-8fd5-48a8-8c0f-e7c2ce63e109, itemType: ROADWORTHY, itemId: f57b413b-dc3e-4b2b-97c6-11e87ab0150e, itemName: Roadworthy Certificate
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 128d8627-8d76-46b3-ae6f-5a014ad7d015, itemType: MECHANIC_SERVICE, itemId: 3d5e6938-a6e0-43c6-914e-d46cc9fccb13, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d2e35fe1-ea28-4b30-9010-72201eebab27, itemType: MECHANIC_SERVICE, itemId: a7e31269-fc42-4d0a-8f5c-b480d4ca15c5, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 78b24563-10ad-40fd-be82-9419d0d44756, itemType: MECHANIC_SERVICE, itemId: 946ce20d-cc88-4c8f-9740-2cf9a41beab5, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2e62efe6-d3e0-4d1e-aef9-6d91d1e2a96b, itemType: MECHANIC_SERVICE, itemId: fcfd27b5-8d23-4506-acfb-3355107c3c0c, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 570ad643-a5bd-42de-96d7-dbcbf88d9643, itemType: TYRE_PURCHASE, itemId: de7ce175-a11e-40d1-8ce4-6e37a3df7596, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 5f8c68a1-2711-40ff-9870-b8ffbd547767, itemType: TYRE_PURCHASE, itemId: 3e09a300-ac94-413b-b90f-f0ab6c7347b8, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 60128630-99ff-44ba-89ad-fcdd5c25e2d6, itemType: TYRE_PURCHASE, itemId: be8649a0-4a44-4d71-8c6c-c540b39e353c, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 9d080167-c124-4215-abe1-5a4d572b861d, itemType: TYRE_PURCHASE, itemId: 01457454-6e00-42ab-a8e9-b0655eb599ce, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 057384b8-eb3b-416c-8d34-1dca12d26fbb, itemType: TYRE_PURCHASE, itemId: 9ef6e983-a600-4c53-83c8-1b261cdb6f42, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 033ae5d4-1c18-477b-94fe-53bec330ca3d, itemType: TYRE_PURCHASE, itemId: 60ee0304-6627-44a1-b80e-fc40ce08d15f, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 7fbf2d2b-573e-49e2-80c1-68aeaa6bd254, itemType: TYRE_PURCHASE, itemId: 735f35e1-37ac-45a0-930f-e9302d13cac0, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 535a1012-b7b6-42c8-a7dd-2851817f859e, itemType: TYRE_PURCHASE, itemId: 4d3601bf-270d-4611-adb3-a97b8efaafe8, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 560ff5af-6fcf-43b4-a8a1-1f70d6e9783d, itemType: TRACKING_CONTRACT, itemId: e1450401-761c-4e48-9682-86c33735fe8a, itemName: Vehicle Tracking
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: d5ca501b-d980-49f1-9084-b2b4b627fd74, itemType: DRIVERS_LICENSE, itemId: 2bf15cb7-ba3b-46de-9d7f-d0f9017e2bc7, itemName: Driver's License
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 63a9cf8b-1bb7-4dca-b70b-60e8a66e67d3, itemType: DRIVERS_LICENSE, itemId: 2aa5d867-a9d8-4cda-a046-c163a8a3df8d, itemName: Driver's License
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: bb102dab-797d-4863-a6c0-01b967cb8f1c, itemType: TYRE_PURCHASE, itemId: b7c8c54c-1805-4ef8-9f62-360ea32ce798, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 57c61b71-60b6-4086-9e5b-752d07990082, itemType: TYRE_PURCHASE, itemId: 56a8e2ee-8e26-4d03-9724-5bf4af96339a, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 0ebbc38c-cfd1-4138-a8bb-b47cf34f4f75, itemType: TYRE_PURCHASE, itemId: 7d4dd617-a512-4db9-8f27-71dd176ba258, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: dd5d51e1-49e8-4aff-ab4e-8c71c60775b7, itemType: TYRE_PURCHASE, itemId: 219a4a15-d5a3-46d5-b7ac-29b861d08893, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 68ad23e9-2790-4c08-9288-1ff27f450fc3, itemType: ROADWORTHY, itemId: 7c858172-e229-4f95-b7e6-9f1a39f51531, itemName: Roadworthy Certificate
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 5d43ec7f-2ace-40e0-8785-8e60e79270fd, itemType: MECHANIC_SERVICE, itemId: 9f1ead78-f3b5-4a07-b2f7-067cb136f7fd, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 2f5d632d-f7d4-44fd-953b-bf78ae6a0a9a, itemType: MECHANIC_SERVICE, itemId: d0ab5a73-1ef7-4554-bfaf-44bdf1253522, itemName: Mechanic Service
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: b8e7809a-f0c4-4d53-982d-7702331ebbd6, itemType: TYRE_PURCHASE, itemId: 768c6991-68e7-4607-bcb1-6394c0db784c, itemName: Tyre Replacement
+2026-06-29 19:24:59 [http-nio-8080-exec-7] INFO  z.c.f.service.ExpiryAlertService - Mapping alert to DTO - id: 3a1ef986-b26d-4f0b-8a27-664aceebaf19, itemType: TYRE_PURCHASE, itemId: da52bc61-f176-4fba-88be-e0b27b2e0b19, itemName: Tyre Replacement
+2026-06-29 20:41:27 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 20:41:27 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 20:41:27 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/vehicles
+2026-06-29 20:41:27 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 20:41:27 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 20:41:27 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/expenses/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 20:41:27 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 20:41:28 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/vehicles
+2026-06-29 20:41:28 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing OPTIONS /api/v1/entry-images/entry/EXPENSE/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 20:41:28 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/vehicles
+2026-06-29 20:41:28 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/v1/entry-images/entry/EXPENSE/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 20:41:28 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/v1/entry-images/entry/EXPENSE/6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 20:41:28 [http-nio-8080-exec-2] INFO  z.c.f.service.EntryImageService - Found 1 entry images for EXPENSE 6cdaa5de-f37d-46df-b109-2b0d0d3927fd
+2026-06-29 20:41:29 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /uploads/entry-images/c9001198-7561-4d76-9ba4-78604e17d945.avif
+2026-06-29 20:41:29 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-06-29 20:41:29 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /uploads/entry-images/c9001198-7561-4d76-9ba4-78604e17d945.avif

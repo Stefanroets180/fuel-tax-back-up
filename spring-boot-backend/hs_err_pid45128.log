@@ -1,0 +1,233 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 536870912 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3603), pid=45128, tid=80012
+#
+# JRE version:  (21.0.9+7) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0.9+7-LTS-338, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 -Dfile.encoding=UTF-8 -Duser.country=ZA -Duser.language=en -Duser.variant za.co.fleetexpense.FleetExpenseApplication -Xmx256m -Xms128m
+
+Host: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz, 8 cores, 31G,  Windows 11 , 64 bit Build 26100 (10.0.26100.9278)
+Time: Mon Sep 21 03:23:57 2026 South Africa Standard Time elapsed time: 0.042696 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000004f17f0):  JavaThread "Unknown thread" [_thread_in_vm, id=80012, stack(0x0000000002220000,0x0000000002320000) (1024K)]
+
+Stack: [0x0000000002220000,0x0000000002320000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6cbf89]
+V  [jvm.dll+0x858421]
+V  [jvm.dll+0x85a94e]
+V  [jvm.dll+0x85b023]
+V  [jvm.dll+0x27ebc6]
+V  [jvm.dll+0x6c8705]
+V  [jvm.dll+0x6bd26a]
+V  [jvm.dll+0x354a0a]
+V  [jvm.dll+0x35c686]
+V  [jvm.dll+0x3af79e]
+V  [jvm.dll+0x3afa48]
+V  [jvm.dll+0x328d1c]
+V  [jvm.dll+0x32987b]
+V  [jvm.dll+0x821739]
+V  [jvm.dll+0x3bc481]
+V  [jvm.dll+0x80a9b8]
+V  [jvm.dll+0x45166e]
+V  [jvm.dll+0x453261]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x2cd30]
+C  [KERNEL32.DLL+0x2ccb7]
+C  [ntdll.dll+0xacaec]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fff6d57fc08, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x00000000180e0a00 WorkerThread "GC Thread#0"                     [id=17888, stack(0x00000000182a0000,0x00000000183a0000) (1024K)]
+  0x0000000002bfb870 ConcurrentGCThread "G1 Main Marker"            [id=71180, stack(0x00000000183a0000,0x00000000184a0000) (1024K)]
+  0x0000000002bfd040 WorkerThread "G1 Conc#0"                       [id=45996, stack(0x00000000184a0000,0x00000000185a0000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff6cceb4a7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fff6d5f0ef0] Heap_lock - owner thread: 0x00000000004f17f0
+
+Heap address: 0x0000000603800000, size: 8136 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 32 size 80 Howl #buckets 8 coarsen threshold 7372 Howl Bitmap #cards 1024 size 144 coarsen threshold 921 Card regions per heap region 1 cards per card region 8192
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000603800000, 0x0000000800000000)
+  region size 4096K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff6d0d4ff9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.011 Loaded shared library C:\Program Files\Java\jdk-21\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff76a350000 - 0x00007ff76a360000 	C:\Program Files\Java\jdk-21\bin\java.exe
+0x00007fffdd3e0000 - 0x00007fffdd647000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fffdbd70000 - 0x00007fffdbe3a000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fffda890000 - 0x00007fffdac92000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fffdafb0000 - 0x00007fffdb0fc000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff78af0000 - 0x00007fff78b09000 	C:\Program Files\Java\jdk-21\bin\jli.dll
+0x00007fff78900000 - 0x00007fff7891b000 	C:\Program Files\Java\jdk-21\bin\VCRUNTIME140.dll
+0x00007fffdcc10000 - 0x00007fffdcccc000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fffdb350000 - 0x00007fffdb3f9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fffdb4a0000 - 0x00007fffdb549000 	C:\WINDOWS\System32\sechost.dll
+0x00007fffdcaf0000 - 0x00007fffdcc08000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fffdbb90000 - 0x00007fffdbd5f000 	C:\WINDOWS\System32\USER32.dll
+0x00007fffb2050000 - 0x00007fffb22e0000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9278_none_3e0d1ba8e3303201\COMCTL32.dll
+0x00007fffdae30000 - 0x00007fffdae57000 	C:\WINDOWS\System32\win32u.dll
+0x00007fffdcf60000 - 0x00007fffdcf8b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fffda760000 - 0x00007fffda889000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fffda5f0000 - 0x00007fffda693000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fffc5d80000 - 0x00007fffc5d8b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fffdd1a0000 - 0x00007fffdd1d1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff7a9f0000 - 0x00007fff7a9fc000 	C:\Program Files\Java\jdk-21\bin\vcruntime140_1.dll
+0x00007fff77020000 - 0x00007fff770ae000 	C:\Program Files\Java\jdk-21\bin\msvcp140.dll
+0x00007fff6c9b0000 - 0x00007fff6d6cd000 	C:\Program Files\Java\jdk-21\bin\server\jvm.dll
+0x00007fffdb400000 - 0x00007fffdb480000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fffda450000 - 0x00007fffda4ae000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007fffb9300000 - 0x00007fffb9336000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fffda430000 - 0x00007fffda445000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007fffd9290000 - 0x00007fffd92ab000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fff7a270000 - 0x00007fff7a27a000 	C:\Program Files\Java\jdk-21\bin\jimage.dll
+0x00007fffd7c30000 - 0x00007fffd7e72000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fffdb760000 - 0x00007fffdbae4000 	C:\WINDOWS\System32\combase.dll
+0x00007fffdcd10000 - 0x00007fffdcde9000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fffbb0d0000 - 0x00007fffbb10b000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fffdae60000 - 0x00007fffdaf0c000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fff78870000 - 0x00007fff7888f000 	C:\Program Files\Java\jdk-21\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.9278_none_3e0d1ba8e3303201;C:\Program Files\Java\jdk-21\bin\server
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 -Dfile.encoding=UTF-8 -Duser.country=ZA -Duser.language=en -Duser.variant 
+java_command: za.co.fleetexpense.FleetExpenseApplication -Xmx256m -Xms128m
+java_class_path (initial): C:\Users\stefa\ZED-COPY\full project\1expense-tracking-app\spring-boot-backend\build\classes\java\main;C:\Users\stefa\ZED-COPY\full project\1expense-tracking-app\spring-boot-backend\build\resources\main;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.postgresql\postgresql\42.7.4\264310fd7b2cd76738787dc0b9f7ea2e3b11adc1\postgresql-42.7.4.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.flywaydb\flyway-database-postgresql\10.10.0\18de19775a0ed33119d1a0c60278e35ecd168543\flyway-database-postgresql-10.10.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.flywaydb\flyway-core\10.10.0\8761d308b9fc9697a95ae362bcbbb5abe8f6e08f\flyway-core-10.10.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.jsonwebtoken\jjwt-impl\0.12.6\ac23673a84b6089e0369fb8ab2c69edd91cd6eb0\jjwt-impl-0.12.6.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.jsonwebtoken\jjwt-jackson\0.12.6\f141e0c1136ba17f2632858238a31ae05642dbf8\jjwt-jackson-0.12.6.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.jsonwebtoken\jjwt-api\0.12.6\478886a888f6add04937baf0361144504a024967\jjwt-api-0.12.6.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.mapstruct\mapstruct\1.6.2\5f4840bb324a33267cc25ee5152b5f483a068b47\mapstruct-1.6.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springdoc\springdoc-openapi-starter-webmvc-ui\2.6.0\2dddebb56441dbaa1009c4de434a83c65596f6ad\springdoc-openapi-starter-webmvc-ui-2.6.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.poi\poi-ooxml\5.2.5\df9f2c52371eeba24db8ea8cafa77285c3cc0742\poi-ooxml-5.2.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.github.openhtmltopdf\openhtmltopdf-pdfbox\1.1.37\9e0ceaf46615d3c77c4800181a738e2a4581097\openhtmltopdf-pdfbox-1.1.37.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.github.openhtmltopdf\openhtmltopdf-svg-support\1.1.37\941c4cf30d0aaf499dfa2382be595e4c698f8d1a\openhtmltopdf-svg-support-1.1.37.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.twelvemonkeys.imageio\imageio-webp\3.10.1\630c3acca152b493dff1acb9627c89ec1f5378b3\imageio-webp-3.10.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-imaging\1.0-alpha3\6c753938422d5810ab815a24337d062bf4e22614\commons-imaging-1.0-alpha3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\me.paulschwarz\spring-dotenv\4.0.0\e0180f80e685a9506d1942e6836a16dee050ebaf\spring-dotenv-4.0.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\4.12.0\2f4525d4a200e97e1b87449c2cd9bd2e25b7e8cd\okhttp-4.12.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.10.1\b3add478d4382b78ea20b1671390a858002feb6c\gson-2.10.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springdoc\springdoc-openapi-starter-webmvc-api\2.6.0\d235c2989247641e5dfe764d7add3a11e4d54a5f\springdoc-openapi-starter-webmvc-api-2.6.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\6.1.14\804478303aac6f91ea566efd4fef3dc06380528a\spring-webmvc-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.security\spring-security-web\6.3.4\d0b9e554c0cc3291086a53e3537935b820d82742\spring-security-web-6.3.4.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web\6.1.14\b45eaad7df4f37ce224acdcb555a6a3dd5c246b2\spring-web-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.hibernate.orm\hibernate-core\6.5.3.Final\1e23c320a5d10f5eaecbd23095fca5c5c83c1fb5\hibernate-core-6.5.3.Final.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.data\spring-data-jpa\3.3.5\72a3aa723e1008cc6216f94e79e2de721fc4c513\spring-data-jpa-3.3.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aspects\6.1.14\cd9d1c53457ac159e1eba3f342cbd6bf8dad4027\spring-aspects-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.security\spring-security-config\6.3.4\ef05a0653492b58f3cfb11f5ee4b69007e259f57\spring-security-config-6.3.4.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-actuator-autoconfigure\3.3.5\8617ea7b29a74350ce526444e193cfca4c06854d\spring-boot-actuator-autoconfigure-3.3.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springdoc\springdoc-openapi-starter-common\2.6.0\c8cf5fbd1f9e4c410d67f1de27dfc3529de13620\springdoc-openapi-starter-common-2.6.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\3.3.5\1efbbd46eeef054986796200313f4bb0d53a7268\spring-boot-autoconfigure-3.3.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-actuator\3.3.5\da2ee79b18d1e62e4225cdd02f690645988b2536\spring-boot-actuator-3.3.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot\3.3.5\1a0d1dc425d445503bd01c9aa3683aaebc524e3b\spring-boot-3.3.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.security\spring-security-core\6.3.4\b090f940b1db00f58f5cad0675ce82670cc75904\spring-security-core-6.3.4.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\6.1.14\b3d96fb4310376a608465c3544b7cfb790293787\spring-context-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\6.1.14\3d5002d4c415c1ff4720f214c804d3d7e7d10111\spring-aop-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-el\10.1.31\ab21108d69bb42160eff7b905f606a1d0c21ae67\tomcat-embed-el-10.1.31.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.hibernate.validator\hibernate-validator\8.0.1.Final\e49e116b3d3928060599b176b3538bb848718e95\hibernate-validator-8.0.1.Final.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-jakarta9\1.13.6\acdec61d99543a94d2488e725e20bbc1f4d5a568\micrometer-jakarta9-1.13.6.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-core\1.13.6\7620ca432f0e499bce51169e2f80c9ffee069d57\micrometer-core-1.13.6.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-observation\1.13.6\8650b5372db17587f1271cd130beafa93d7eb573\micrometer-observation-1.13.6.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-qual\3.42.0\638ec33f363a94d41a4f03c3e7d3dcfba64e402d\checker-qual-3.42.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\2.17.2\efd3dd0e1d0db8bc72abbe71c15e697bb83b4b45\jackson-datatype-jdk8-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.swagger.core.v3\swagger-core-jakarta\2.2.22\9ed5daaaa1c94c9a6b56c058c9d1b3190044a2e2\swagger-core-jakarta-2.2.22.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\2.17.2\267b85e9ba2892a37be6d80aa9ca1438a0d8c210\jackson-datatype-jsr310-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.module\jackson-module-parameter-names\2.17.2\d27b9f95ccce98984c1ba58d61c5a9c072b1ad95\jackson-module-parameter-names-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.dataformat\jackson-dataformat-yaml\2.17.2\78d2c73dbec62044d7cf3b544b2e0d24a1a093b0\jackson-dataformat-yaml-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.17.2\e6deb029e5901e027c129341fac39e515066b68c\jackson-databind-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.17.2\969a35cb35c86512acbadcdbbbfb044c877db814\jackson-core-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.swagger.core.v3\swagger-models-jakarta\2.2.22\bc2809b2efa1f7b062bc9668304a84b198fececd\swagger-models-jakarta-2.2.22.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.17.2\147b7b9412ffff24339f8aba080b292448e08698\jackson-annotations-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.dataformat\jackson-dataformat-toml\2.17.2\f085b1a94428c4546eef48f00cfa63286f54a8e2\jackson-dataformat-toml-2.17.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.webjars\swagger-ui\5.17.14\7c746d197424eb721b4e08fcaa9e85231662d81f\swagger-ui-5.17.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.poi\poi\5.2.5\7e00f6b2f76375fe89022d5a7db8acb71cbd55f5\poi-5.2.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.poi\poi-ooxml-lite\5.2.5\eaa61452d8f0d13080fbb4757a392f09f90e4c49\poi-ooxml-lite-5.2.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlbeans\xmlbeans\5.2.0\6198ac997b3f234f2b5393fa415f78fac2e06510\xmlbeans-5.2.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-compress\1.25.0\9d35aec423da6c8a7f93d7e9e1c6b1d9fe14bb5e\commons-compress-1.25.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-codec\1.17\7cceac705d050a9730e7032da43a42c66cfadc41\batik-codec-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-transcoder\1.17\59714b2b8848f0ade8de47ca555f9a75d5191834\batik-transcoder-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-bridge\1.17\d8246a26d8e0503fc30822fed2a8595b3659af90\batik-bridge-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-script\1.17\958bad8baa3a77a73152281418256b608801232d\batik-script-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-anim\1.17\89e5d61a4328d6755dd7903fb5e7f0b265ff8fbe\batik-anim-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-gvt\1.17\33f70788de9f7d31d69db22c0afaf304424ff799\batik-gvt-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-svggen\1.17\2ecd4a5ab064e89172fbdd025c422e04a57a1024\batik-svggen-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-svg-dom\1.17\54a25b9b691bcc302c0dd36d80f56e81a9ebed91\batik-svg-dom-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-parser\1.17\da9d3057be108e6ac8799cc8efed1e2b490ba37c\batik-parser-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-awt-util\1.17\e3f71c6f07da863228b64a59bf059c4611c3952\batik-awt-util-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-dom\1.17\efcb39f1007187565c264a5f1d12ebcf67efb761\batik-dom-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-css\1.17\d5ff4e0463af8a0ea5ab8d782c5418bab2f45c4d\batik-css-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\xmlgraphics-commons\2.9\de2d1bd8d40474bbe876bb269410c750489f08e5\xmlgraphics-commons-2.9.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.15.0\5c3c2db10f6f797430a7f9c696b4d1273768c924\commons-io-2.15.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.github.virtuald\curvesapi\1.08\3d3d36568154059825089b289dcfca481fe44e2c\curvesapi-1.08.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-to-slf4j\2.23.1\425ad1eb8a39904d2830e907a324e956fb456520\log4j-to-slf4j-2.23.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.23.1\9c15c29c526d9c6783049c0a77722693c66706e1\log4j-api-2.23.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-collections4\4.4\62ebe7544cb7164d87e0637a2a6a2bdc981395e8\commons-collections4-4.4.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.thymeleaf\thymeleaf-spring6\3.1.2.RELEASE\6030c7b4e260c41336f378e53da6e8531263f24b\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.pdfbox\pdfbox\3.0.3\a739bfc1b72d2f98d973cd1419f5ae2decd36068\pdfbox-3.0.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.pdfbox\xmpbox\3.0.3\114270724dfce4fe07e7111a9973d839352e1658\xmpbox-3.0.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.github.openhtmltopdf\openhtmltopdf-core\1.1.37\7e6b9b905e262b4061bb79d484632ddeb2a70071\openhtmltopdf-core-1.1.37.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\de.rototor.pdfbox\graphics2d\3.0.1\660c5e7359e89403e14ebd8803ca3e12ab750eda\graphics2d-3.0.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-ext\1.17\fd2e4166a14f8bbe099162ad88cfe64be09d35a2\batik-ext-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.twelvemonkeys.imageio\imageio-metadata\3.10.1\69148d39e4ab2e76ffd3ad1b2dbe98f3f9bdd065\imageio-metadata-3.10.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.twelvemonkeys.imageio\imageio-core\3.10.1\fc32667ccd712ed992083d16ab998fdf71a0715d\imageio-core-3.10.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.twelvemonkeys.common\common-image\3.10.1\d4f6254a03b9239d32e272d7871b7c4242b8e4bb\common-image-3.10.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.twelvemonkeys.common\common-io\3.10.1\ba1865c2a9453467e39648f25395b1e48ef91eb0\common-io-3.10.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.twelvemonkeys.common\common-lang\3.10.1\c5260a1f265693c45995903a59c7b643bb911c40\common-lang-3.10.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.github.cdimascio\dotenv-java\3.0.0\f535c5df8b98575eabb2820e548f5ba8a987fe69\dotenv-java-3.0.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio-jvm\3.6.0\5600569133b7bdefe1daf9ec7f4abeb6d13e1786\okio-jvm-3.6.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.9.25\1c166692314a2639e5edfed0d23ed7eee4a5c7a5\kotlin-stdlib-jdk7-1.9.25.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.9.25\f700a2f2b8f0d6d0fde48f56d894dc722fb029d7\kotlin-stdlib-1.9.25.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.9.25\20d44e880a284f7b5cd99dd69450b403073f49b2\kotlin-stdlib-jdk8-1.9.25.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\jakarta.annotation\jakarta.annotation-api\2.1.1\48b9bda22b091b1f48b13af03fe36db3be6e1ae3\jakarta.annotation-api-2.1.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-orm\6.1.14\fc113b824cb790ae320cc7f97803d92cbb9ebf6e\spring-orm-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jdbc\6.1.14\30ecdc7b9031553835ae16fa786fb24297adc857\spring-jdbc-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.data\spring-data-commons\3.3.5\fb640c93121dc1e57b63d9315f646cd828f7368d\spring-data-commons-3.3.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-tx\6.1.14\f6cc1a08472e8ac51298a26bbe0f8b3d47d43175\spring-tx-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\6.1.14\be71b919145e20fb7f38c81467d7d0f1c09ad1bd\spring-beans-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\6.1.14\495646d4968fb90aa97bc05a7d298d0c32898a1d\spring-expression-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\6.1.14\45d2d808015bf6c5411e457fa09e843042dc3a76\spring-core-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.yaml\snakeyaml\2.2\3af797a25458550a16bf89acc8e4ab2b7f2bfce0\snakeyaml-2.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-websocket\10.1.31\6f755a475e44ece496ae3402de0c6c2dbea63921\tomcat-embed-websocket-10.1.31.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\10.1.31\a91cc0a95157228d9cccb1a9e8fb9c77c048c937\tomcat-embed-core-10.1.31.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjweaver\1.9.22.1\bca243d0af0db4758fbae45c5f4995cb5dabb612\aspectjweaver-1.9.22.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\5.1.0\8c96e36c14461fc436bb02b264b96ef3ca5dca8c\HikariCP-5.1.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\jakarta.persistence\jakarta.persistence-api\3.1.0\66901fa1c373c6aff65c13791cc11da72060a8d6\jakarta.persistence-api-3.1.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\jakarta.transaction\jakarta.transaction-api\2.0.1\51a520e3fae406abb84e2e1148e6746ce3f80a1a\jakarta.transaction-api-2.0.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.jboss.logging\jboss-logging\3.5.3.Final\c88fc1d8a96d4c3491f55d4317458ccad53ca663\jboss-logging-3.5.3.Final.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.hibernate.common\hibernate-commons-annotations\6.0.6.Final\77a5f94b56d49508e0ee334751db5b78e5ccd50c\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.smallrye\jandex\3.1.2\a6c1c89925c7df06242b03dddb353116ceb9584c\jandex-3.1.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.fasterxml\classmate\1.7.0\e98374da1f2143ac8e6e0a95036994bb19137a3\classmate-1.7.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy\1.14.19\4c0c637b8f47dc08f89240e6f59900011752c97b\byte-buddy-1.14.19.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\4.0.5\ca84c2a7169b5293e232b9d00d1e4e36d4c3914a\jaxb-runtime-4.0.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-core\4.0.5\7b4b11ea5542eea4ad55e1080b23be436795b3\jaxb-core-4.0.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\jakarta.xml.bind\jakarta.xml.bind-api\4.0.2\6cd5a999b834b63238005b7144136379dc36cad2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\jakarta.inject\jakarta.inject-api\2.0.1\4c28afe1991a941d7702fe1362c365f0a8641d1e\jakarta.inject-api-2.0.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.antlr\antlr4-runtime\4.13.0\5a02e48521624faaf5ff4d99afc88b01686af655\antlr4-runtime-4.13.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.thymeleaf\thymeleaf\3.1.2.RELEASE\273997509a4c7aef86cee0521750140c587d9be2\thymeleaf-3.1.2.RELEASE.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.5.11\c4473fb51fea6682ad477cf3c2206b8b9623b9d8\logback-classic-1.5.11.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.slf4j\jul-to-slf4j\2.0.16\6d57da3e961daac65bcca0dd3def6cd11e48a24a\jul-to-slf4j-2.0.16.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.16\172931663a09a1fa515567af5fbef00897d3c04\slf4j-api-2.0.16.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\jakarta.validation\jakarta.validation-api\3.0.2\92b6631659ba35ca09e44874d3eb936edfeee532\jakarta.validation-api-3.0.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-commons\1.13.6\224f398df08315a8f9cda21fcb4f062d24da4a49\micrometer-commons-1.13.6.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.16.1\47bd4d333fba53406f6c6c51884ddbca435c8862\commons-codec-1.16.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-math3\3.6.1\e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf\commons-math3-3.6.1.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.zaxxer\SparseBitSet\1.3\533eac055afe3d5f614ea95e333afd6c2bde8f26\SparseBitSet-1.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.pdfbox\fontbox\3.0.3\9eebd1ee868a79fcf7390283b2baf4179dadb8ed\fontbox-3.0.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.pdfbox\pdfbox-io\3.0.3\c40dcf555b72b1d8c0cd19391d63e5b58382b9cb\pdfbox-io-3.0.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.3.3\580ad1a4f34876c4f964c083361de31b3d60be68\commons-logging-1.3.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-xml\1.17\15a0b4ba6260f3430632e4b1dad95383196107a8\batik-xml-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-util\1.17\83ef2a8b449444a1d57e91e938522899317a8672\batik-util-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-constants\1.17\22bf8b4c207dc46859db0269853186d8dfc8cb9a\batik-constants-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-i18n\1.17\39b233a71430ffa9d0282d47789a58fa8bf4f861\batik-i18n-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.xmlgraphics\batik-shared-resources\1.17\2862b81d9dc63990cb5586323b4a2410fc1f2249\batik-shared-resources-1.17.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\xml-apis\xml-apis-ext\1.3.04\41a8b86b358e87f3f13cf46069721719105aff66\xml-apis-ext-1.3.04.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jcl\6.1.14\842b2b24a375efd79af436860d22ba4e0082ff4b\spring-jcl-6.1.14.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.eclipse.angus\angus-activation\2.0.2\41f1e0ddd157c856926ed149ab837d110955a9fc\angus-activation-2.0.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\jakarta.activation\jakarta.activation-api\2.1.3\fa165bd70cda600368eee31555222776a46b881f\jakarta.activation-api-2.1.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.springframework.security\spring-security-crypto\6.3.4\220656844844c23d07e8f0105e75c74530db2657\spring-security-crypto-6.3.4.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.hdrhistogram\HdrHistogram\2.2.2\7959933ebcc0f05b2eaa5af0a0c8689fa257b15c\HdrHistogram-2.2.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.latencyutils\LatencyUtils\2.0.3\769c0b82cb2421c8256300e907298a9410a2a3d3\LatencyUtils-2.0.3.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.attoparser\attoparser\2.0.7.RELEASE\e5d0e988d9124139d645bb5872b24dfa23e283cc\attoparser-2.0.7.RELEASE.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.unbescape\unbescape\1.1.6.RELEASE\7b90360afb2b860e09e8347112800d12c12b2a13\unbescape-1.1.6.RELEASE.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\xml-apis\xml-apis\1.4.01\3789d9fada2d3d458c4ba2de349d48780f381ee3\xml-apis-1.4.01.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.5.11\727bdb8dc75b6c392f9be56224503948abc248e8\logback-core-1.5.11.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\txw2\4.0.5\f36a4ef12120a9bb06d766d6a0e54b144fd7ed98\txw2-4.0.5.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\com.sun.istack\istack-commons-runtime\4.1.2\18ec117c85f3ba0ac65409136afa8e42bc74e739\istack-commons-runtime-4.1.2.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.14.0\1ed471194b02f2c6cb734a0cd6f6f107c673afae\commons-lang3-3.14.0.jar;C:\Users\stefa\.gradle\caches\modules-2\files-2.1\io.swagger.core.v3\swagger-annotations-jakarta\2.2.22\1efc0b0af32fce629f0786062c89e8b117abe120\swagger-annotations-jakarta-2.2.22.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 4194304                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 536870912                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 8531214336                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 4194304                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 4096                                   {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 8531214336                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-21
+PATH=C:\Program Files\Java\jdk-21\bin;C:\Program Files (x86)\\Oracle\oci_cli\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VC\VCPackages;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer;C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\bin\Roslyn;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.7.2 Tools\;C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector;C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\\x86;C:\Program Files (x86)\Windows Kits\10\bin\\x86;C:\Program Files\Microsoft Visual Studio\2022\Community\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Volta\;C:\Program Files (x86)\oh-my-posh\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nu\bin\;C:\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin;C:\Gradle\bin;C:\Users\stefa\AppData\Local\Programs\Python\Python314\Scripts\;C:\Users\stefa\AppData\Local\Programs\Python\Python314\;C:\Users\stefa\.volta\bin;C:\Users\stefa\AppData\Local\Volta\bin;C:\Users\stefa\AppData\Local\Programs\oh-my-posh\bin\;C:\Users\stefa\AppData\Local\Microsoft\WindowsApps;C:\Users\stefa\AppData\Local\Programs\VSCodium\bin;C:\Users\stefa\AppData\Local\Microsoft\WinGet\Links;C:\Users\stefa\.dotnet\tools;C:\Users\stefa\AppData\Local\Programs\nu\bin\;C:\Users\stefa\AppData\Local\Programs\Filestar;C:\Users\stefa\AppData\Roaming\Filestar\aliases;C:\Users\stefa\.dotnet\tools;C:\Users\stefa\AppData\Local\Microsoft\WindowsApps;C:\Users\stefa\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\WebStorm 2026.1.2\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.2\bin;C:\Users\stefa\AppData\Local\Programs\Qoder\bin;C:\Users\stefa\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\stefa\AppData\Local\Programs\Windsurf\bin;C:\Users\stefa\AppData\Local\Programs\Devin\bin;C:\Users\stefa\AppData\Local\Programs\Ollama;C:\Microsoft VS Code\bin;C:\Program Files (x86)\OpenSSH;C:\Program Files\OpenSSH;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\AppControl\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\Users\stefa\AppData\Local\Programs\Python\Python314\Scripts\;C:\Users\stefa\AppData\Local\Programs\Python\Python314\;C:\Users\stefa\.volta\bin;C:\Users\stefa\AppData\Local\Volta\bin;C:\Users\stefa\AppData\Local\Programs\oh-my-posh\bin\;C:\Users\stefa\AppData\Local\Microsoft\WindowsApps;C:\Users\stefa\AppData\Local\Programs\VSCodium\bin;C:\Users\stefa\AppData\Local\Microsoft\WinGet\Links;C:\Users\stefa\.dotnet\tools;C:\Users\stefa\AppData\Local\Programs\nu\bin\;C:\Users\stefa\AppData\Local\Programs\Filestar;C:\Users\stefa\AppData\Roaming\Filestar\aliases;C:\Users\stefa\.dotnet\tools;C:\Users\stefa\AppData\Local\Microsoft\WindowsApps;C:\Users\stefa\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\WebStorm 2026.1.2\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1.2\bin;C:\Users\stefa\AppData\Local\Programs\Qoder\bin;C:\Gradle\bin;C:\Users\stefa\AppData\Local\Programs\Windsurf\bin;C:\Users\stefa\AppData\Local\Programs\Devin\bin;C:\Users\stefa\AppData\Local\Programs\Ollama;C:\Microsoft VS Code\bin;C:\Users\stefa\AppData\Local\Programs\Zed\bin;C:\Users\stefa\AppData\Local\JetBrains\Toolbox\scripts;C:\Program Files\JetBrains\IntelliJ IDEA 2026.2.2\bin
+USERNAME=stefa
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
+TMP=C:\Users\stefa\AppData\Local\Temp
+TEMP=C:\Users\stefa\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.9278)
+OS uptime: 0 days 2:24 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 126 stepping 5 microcode 0xc2, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, avx512_vbmi2, avx512_vbmi, hv, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, avx512_ifma
+Processor Information for all 8 processors :
+  Max Mhz: 1190, Current Mhz: 991, Mhz Limit: 987
+
+Memory: 4k page, system-wide physical 32535M (10366M free)
+TotalPageFile size 92081M (AvailPageFile size 141M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 56M, peak: 568M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.9+7-LTS-338) for windows-amd64 JRE (21.0.9+7-LTS-338), built on 2025-09-26T06:33:49Z by "mach5run" with MS VC++ 17.6 (VS2022)
+
+END.

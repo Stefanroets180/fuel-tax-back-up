@@ -34,3 +34,25 @@ temp_jar_base64.txt
 # Windows reserved device names
 nul
 nul.del
+
+# macOS metadata files
+.DS_Store
+._*
+
+# .devin directory
+.devin/
+
+# Test and backup files
+test123.jpg
+trip-log-form-backup.tsx
+frontend.log
+tsconfig.tsbuildinfo
+
+# Other junk
+New favicons/
+icon/
+services/
+add-expenses-script.js
+RUN.md
+SETUP.md
+EXPORT_FIX_SUMMARY.md

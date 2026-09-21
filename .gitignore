@@ -18,8 +18,6 @@ spring-boot-backend/uploads/
 spring-boot-backend/static/uploads/
 spring-boot-backend/.env.production
 
-# Frontend (separate repository)
-frontend/
 
 # IDE
 .idea/
@@ -32,3 +30,7 @@ node_modules
 # Large files
 *.jar
 temp_jar_base64.txt
+
+# Windows reserved device names
+nul
+nul.del

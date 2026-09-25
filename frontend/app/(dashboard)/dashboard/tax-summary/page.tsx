@@ -22,6 +22,26 @@ interface Vehicle {
   registrationNumber: string;
   make: string;
   model: string;
+  assignedDriverId?: string;
+}
+
+interface OrganizationUser {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+interface VehicleTaxAcquisitionFacts {
+  id?: string;
+  vehicleId: string;
+  recipientUserId: string;
+  recipientUserName?: string;
+  recipientUserEmail?: string;
+  recipientAcquisitionDate?: string;
+  recipientAcquisitionCostCents?: number;
+  originalPurchaseDebtCents?: number | null;
+  vehicleArrangementType: 'OWNED' | 'LEASED';
 }
 
 interface VehicleTaxProfile {
@@ -39,6 +59,9 @@ interface VehicleTaxProfile {
   effectiveTo?: string;
   defaultCalculationMethod?: 'ACTUAL_COSTS' | 'SARS_COST_SCALE' | 'SIMPLIFIED_REIMBURSIVE';
   isCompanyProvidedVehicle?: boolean;
+  recipientUserId?: string;
+  recipientUserName?: string;
+  recipientUserEmail?: string;
   march1stPhotoOdometer?: number | null;
   feb28thPhotoOdometer?: number | null;
 }
@@ -79,7 +102,7 @@ interface TaxComparisonResponse {
 
 export default function TaxSummaryPage() {
   const router = useRouter();
-  const { user } = useAuth();
+  const { user, isLoading: authLoading } = useAuth();
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
   const [selectedVehicleId, setSelectedVehicleId] = useState<string>("");
   // UI stores the tax-year start year: 2026 means 2026/27.
@@ -101,6 +124,12 @@ export default function TaxSummaryPage() {
   const [editingProfile, setEditingProfile] = useState<Partial<VehicleTaxProfile>>({});
   const [vehicleCostInput, setVehicleCostInput] = useState<string>('');
   const [savingProfile, setSavingProfile] = useState(false);
+  const [organizationUsers, setOrganizationUsers] = useState<OrganizationUser[]>([]);
+  const [acquisitionFacts, setAcquisitionFacts] = useState<VehicleTaxAcquisitionFacts | null>(null);
+  const [editingAcquisitionFacts, setEditingAcquisitionFacts] = useState<Partial<VehicleTaxAcquisitionFacts>>({});
+  const [savingAcquisitionFacts, setSavingAcquisitionFacts] = useState(false);
+  const [acquisitionCostInput, setAcquisitionCostInput] = useState<string>('');
+  const [purchaseDebtInput, setPurchaseDebtInput] = useState<string>('');
 
   // Phase 8: Multi-tenant view switching based on organization mode
   const isFleetMode = user?.organizationMode === OrganizationMode.BUSINESS_FLEET || user?.organizationMode === OrganizationMode.COMPANY;
@@ -123,16 +152,19 @@ export default function TaxSummaryPage() {
 
   useEffect(() => {
     fetchVehicles();
+    fetchOrganizationUsers();
   }, []);
 
   useEffect(() => {
+    if (authLoading) return; // Wait for auth to resolve before fetching
     if (viewMode === 'combined') {
       fetchAllTaxSummaries();
     } else if (selectedVehicleId) {
       fetchTaxSummary();
       fetchVehicleTaxProfile();
+      fetchAcquisitionFacts();
     }
-  }, [selectedVehicleId, selectedTaxYear, viewMode]);
+  }, [selectedVehicleId, selectedTaxYear, viewMode, authLoading]);
 
   const fetchVehicles = async () => {
     setLoading(true);
@@ -174,6 +206,38 @@ export default function TaxSummaryPage() {
     }
   };
 
+  const fetchOrganizationUsers = async () => {
+    try {
+      const response = await apiFetch("/users/organization");
+      if (response.ok) {
+        const data = await response.json();
+        setOrganizationUsers(data);
+      }
+    } catch (err) {
+      console.error("Failed to fetch organization users:", err);
+    }
+  };
+
+  const fetchAcquisitionFacts = async () => {
+    if (!selectedVehicleId || !vehicleTaxProfile?.recipientUserId) return;
+    try {
+      const response = await apiFetch(`/vehicles/${selectedVehicleId}/acquisition-facts?recipientUserId=${vehicleTaxProfile.recipientUserId}`);
+      if (response.ok) {
+        const data = await response.json();
+        setAcquisitionFacts(data);
+        setEditingAcquisitionFacts(data);
+        if (data.recipientAcquisitionCostCents) {
+          setAcquisitionCostInput((data.recipientAcquisitionCostCents / 100).toFixed(2));
+        }
+        if (data.originalPurchaseDebtCents) {
+          setPurchaseDebtInput((data.originalPurchaseDebtCents / 100).toFixed(2));
+        }
+      }
+    } catch (err) {
+      console.error("Failed to fetch acquisition facts:", err);
+    }
+  };
+
   const fetchAllTaxSummaries = async () => {
     if (!selectedTaxYear) return;
 
@@ -199,10 +263,18 @@ export default function TaxSummaryPage() {
             }));
             vehicleResults[summary.vehicleId] = results;
 
-            // Auto-select the first eligible method for each vehicle
-            const firstEligible = results.find((r) => r.eligible);
-            if (firstEligible) {
-              vehicleMethods[summary.vehicleId] = firstEligible.method;
+            // Auto-select: org default if eligible, otherwise first eligible for each vehicle
+            const orgDefaultMethod = user?.defaultTaxCalculationMethod;
+            const orgDefaultEligible = orgDefaultMethod
+              ? results.find((r) => r.method === orgDefaultMethod && r.eligible)
+              : null;
+            if (orgDefaultEligible) {
+              vehicleMethods[summary.vehicleId] = orgDefaultEligible.method;
+            } else {
+              const firstEligible = results.find((r) => r.eligible);
+              if (firstEligible) {
+                vehicleMethods[summary.vehicleId] = firstEligible.method;
+              }
             }
           }
         }
@@ -281,19 +353,19 @@ export default function TaxSummaryPage() {
       if (response.ok) {
         const data = await response.json();
         setVehicleTaxProfile(data);
-        // Only auto-populate if there are business trips, otherwise use existing date or empty
+        // Preserve existing stored date, only use business trip suggestion if empty
         const profileWithDate = {
           ...data,
-          datePlacedInBusinessUse: firstBusinessDate ? firstBusinessDate : (data.datePlacedInBusinessUse || '')
+          datePlacedInBusinessUse: data.datePlacedInBusinessUse || firstBusinessDate
         };
         console.log("Vehicle", selectedVehicleId, "- Setting editing profile with date:", profileWithDate.datePlacedInBusinessUse);
         setEditingProfile(profileWithDate);
         setVehicleCostInput(data.vehicleCostCents ? (data.vehicleCostCents / 100).toFixed(2) : '');
       } else if (response.status === 404) {
-        // No tax profile exists for this vehicle - only auto-populate if there are business trips
+        // No tax profile exists for this vehicle - use business trip suggestion if available
         setVehicleTaxProfile(null);
         setEditingProfile({
-          datePlacedInBusinessUse: firstBusinessDate || ''
+          datePlacedInBusinessUse: firstBusinessDate
         });
         console.log("Vehicle", selectedVehicleId, "- No tax profile, setting date:", firstBusinessDate || 'empty (no business trips)');
         setVehicleCostInput('');
@@ -325,6 +397,9 @@ export default function TaxSummaryPage() {
     if (!editingProfile.compensationType) {
       validationErrors.push('Compensation Type is required');
     }
+    if ((editingProfile.taxpayerType === 'EMPLOYEE' || editingProfile.taxpayerType === 'SOLE_PROPRIETOR') && !editingProfile.recipientUserId) {
+      validationErrors.push('Taxpayer / SARS Recipient is required for EMPLOYEE and SOLE_PROPRIETOR');
+    }
     if (!editingProfile.fuelBorneBy) {
       validationErrors.push('Fuel Borne By is required');
     }
@@ -354,6 +429,7 @@ export default function TaxSummaryPage() {
         effectiveTo: editingProfile.effectiveTo || null,
         defaultCalculationMethod: editingProfile.defaultCalculationMethod || 'ACTUAL_COSTS',
         isCompanyProvidedVehicle: editingProfile.isCompanyProvidedVehicle || false,
+        recipientUserId: editingProfile.recipientUserId,
       };
 
       let response;
@@ -388,6 +464,65 @@ export default function TaxSummaryPage() {
     }
   };
 
+  const saveAcquisitionFacts = async () => {
+    if (!selectedVehicleId || !vehicleTaxProfile?.recipientUserId) return;
+
+    setSavingAcquisitionFacts(true);
+    setError(null);
+
+    try {
+      const validationErrors: string[] = [];
+
+      if (!editingAcquisitionFacts.vehicleArrangementType) {
+        validationErrors.push('Vehicle arrangement is required');
+      }
+
+      if (editingAcquisitionFacts.vehicleArrangementType === 'OWNED') {
+        if (!editingAcquisitionFacts.recipientAcquisitionDate) {
+          validationErrors.push('Acquisition date is required for owned vehicles');
+        }
+        if (!editingAcquisitionFacts.recipientAcquisitionCostCents || editingAcquisitionFacts.recipientAcquisitionCostCents <= 0) {
+          validationErrors.push('Acquisition cost is required for owned vehicles and must be greater than 0');
+        }
+      }
+
+      if (editingAcquisitionFacts.originalPurchaseDebtCents !== undefined && editingAcquisitionFacts.originalPurchaseDebtCents !== null && editingAcquisitionFacts.originalPurchaseDebtCents < 0) {
+        validationErrors.push('Original purchase debt cannot be negative');
+      }
+
+      if (validationErrors.length > 0) {
+        setError(validationErrors.join('; '));
+        return;
+      }
+
+      const factsData = {
+        recipientUserId: vehicleTaxProfile.recipientUserId,
+        recipientAcquisitionDate: editingAcquisitionFacts.recipientAcquisitionDate,
+        recipientAcquisitionCostCents: editingAcquisitionFacts.recipientAcquisitionCostCents,
+        originalPurchaseDebtCents: editingAcquisitionFacts.originalPurchaseDebtCents,
+        vehicleArrangementType: editingAcquisitionFacts.vehicleArrangementType,
+      };
+
+      const response = await apiFetch(`/vehicles/${selectedVehicleId}/acquisition-facts`, {
+        method: 'PUT',
+        body: JSON.stringify(factsData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setAcquisitionFacts(data);
+        setEditingAcquisitionFacts(data);
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error || 'Failed to save acquisition facts');
+      }
+    } catch (err) {
+      setError('Failed to save acquisition facts');
+    } finally {
+      setSavingAcquisitionFacts(false);
+    }
+  };
+
   const fetchComparisonResults = async () => {
     if (!selectedVehicleId || !selectedTaxYear) return;
 
@@ -402,10 +537,18 @@ export default function TaxSummaryPage() {
           method: key,
         }));
         setComparisonResults(results);
-        // Auto-select the first eligible method
-        const firstEligible = results.find((r) => r.eligible);
-        if (firstEligible) {
-          setSelectedMethod(firstEligible.method);
+        // Auto-select: org default if eligible, otherwise first eligible
+        const orgDefaultMethod = user?.defaultTaxCalculationMethod;
+        const orgDefaultEligible = orgDefaultMethod
+          ? results.find((r) => r.method === orgDefaultMethod && r.eligible)
+          : null;
+        if (orgDefaultEligible) {
+          setSelectedMethod(orgDefaultEligible.method);
+        } else {
+          const firstEligible = results.find((r) => r.eligible);
+          if (firstEligible) {
+            setSelectedMethod(firstEligible.method);
+          }
         }
       } else if (response.status === 404) {
         // No tax profile exists for this vehicle
@@ -566,9 +709,9 @@ export default function TaxSummaryPage() {
       </div>
 
       {/* Filters */}
-      <Card>
+      <Card className="dark:border-gray-700 dark:bg-gray-800">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 dark:text-gray-100">
             <Car className="h-5 w-5" />
             Vehicle & Tax Year Selection
           </CardTitle>
@@ -604,7 +747,7 @@ export default function TaxSummaryPage() {
               <div className="flex-1 w-full">
                 <label htmlFor="vehicle-select" className="text-sm font-medium mb-2 block">Vehicle</label>
                 <Select value={selectedVehicleId} onValueChange={setSelectedVehicleId} name="vehicle">
-                  <SelectTrigger id="vehicle-select">
+                  <SelectTrigger id="vehicle-select" name="vehicle-select">
                     <SelectValue placeholder="Select a vehicle" />
                   </SelectTrigger>
                   <SelectContent>
@@ -620,7 +763,7 @@ export default function TaxSummaryPage() {
             <div className="w-full md:w-48">
               <label htmlFor="tax-year-select" className="text-sm font-medium mb-2 block">Tax Year</label>
               <Select value={selectedTaxYear.toString()} onValueChange={(v) => setSelectedTaxYear(parseInt(v))} name="tax-year">
-                <SelectTrigger id="tax-year-select">
+                <SelectTrigger id="tax-year-select" name="tax-year-select">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -638,25 +781,27 @@ export default function TaxSummaryPage() {
 
       {/* Vehicle Tax Profile Configuration */}
       {viewMode === 'individual' && (
-        <Card>
+        <Card className="dark:border-gray-700 dark:bg-gray-800">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2 dark:text-gray-100">
               <Car className="h-5 w-5" />
               Vehicle Tax Profile Configuration
             </CardTitle>
           </CardHeader>
           <CardContent>
             {!vehicleTaxProfile && (
-              <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
-                <p className="text-sm text-yellow-800">
+              <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-md dark:bg-yellow-950 dark:border-yellow-900">
+                <p className="text-sm text-yellow-800 dark:text-yellow-200">
                   No tax profile set up for this vehicle. Set up a tax profile to configure tax calculation methods and odometer baselines.
                 </p>
               </div>
             )}
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
-                <label className="text-sm font-medium">Vehicle Cost (ZAR) *</label>
+                <label htmlFor="vehicle-cost" className="text-sm font-medium dark:text-gray-300">Vehicle Cost (ZAR) *</label>
                 <input
+                  id="vehicle-cost"
+                  name="vehicle-cost"
                   type="text"
                   inputMode="decimal"
                   value={vehicleCostInput}
@@ -672,33 +817,33 @@ export default function TaxSummaryPage() {
                       setEditingProfile({ ...editingProfile, vehicleCostCents: Math.round(numValue * 100) });
                     }
                   }}
-                  className="w-full px-3 py-2 border rounded-md"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
                   placeholder="e.g., 250000.00"
                   required
                 />
-                <p className="text-xs text-gray-500">Total vehicle cost including VAT (purchase price + accessories).</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Total vehicle cost including VAT (purchase price + accessories).</p>
               </div>
               <div className="space-y-2">
-                <label htmlFor="datePlacedInBusinessUse" className="text-sm font-medium">Date Placed in Business Use *</label>
+                <label htmlFor="datePlacedInBusinessUse" className="text-sm font-medium dark:text-gray-300">Date Placed in Business Use *</label>
                 <input
                   type="date"
                   id="datePlacedInBusinessUse"
                   name="datePlacedInBusinessUse"
                   value={editingProfile.datePlacedInBusinessUse || ''}
                   onChange={(e) => setEditingProfile({ ...editingProfile, datePlacedInBusinessUse: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-md"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
                   max={new Date().toISOString().split('T')[0]}
                   required
                 />
-                <p className="text-xs text-gray-500">When this vehicle was first used for business purposes. Auto-populated from first business trip: {editingProfile.datePlacedInBusinessUse || 'Not set'}</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">When this vehicle was first used for business purposes. Auto-populated from first business trip: {editingProfile.datePlacedInBusinessUse || 'Not set'}</p>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Taxpayer Type *</label>
+                <label htmlFor="taxpayer-type" className="text-sm font-medium dark:text-gray-300">Taxpayer Type *</label>
                 <Select
                   value={editingProfile.taxpayerType || 'EMPLOYEE'}
                   onValueChange={(value) => setEditingProfile({ ...editingProfile, taxpayerType: value as any })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger id="taxpayer-type" name="taxpayer-type" className="dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -708,13 +853,36 @@ export default function TaxSummaryPage() {
                   </SelectContent>
                 </Select>
               </div>
+              {(editingProfile.taxpayerType === 'EMPLOYEE' || editingProfile.taxpayerType === 'SOLE_PROPRIETOR') && (
+                <div className="space-y-2">
+                  <label htmlFor="recipient-user" className="text-sm font-medium dark:text-gray-300">Taxpayer / SARS Recipient *</label>
+                  <Select
+                    value={editingProfile.recipientUserId || ''}
+                    onValueChange={(value) => setEditingProfile({ ...editingProfile, recipientUserId: value })}
+                  >
+                    <SelectTrigger id="recipient-user" name="recipient-user" className="dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
+                      <SelectValue placeholder="Select recipient" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {organizationUsers.map((orgUser) => (
+                        <SelectItem key={orgUser.id} value={orgUser.id}>
+                          {orgUser.firstName} {orgUser.lastName} ({orgUser.email})
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    The natural person who is the SARS tax recipient for this vehicle.
+                  </p>
+                </div>
+              )}
               <div className="space-y-2">
-                <label className="text-sm font-medium">Compensation Type *</label>
+                <label htmlFor="compensation-type" className="text-sm font-medium dark:text-gray-300">Compensation Type *</label>
                 <Select
                   value={editingProfile.compensationType || 'TRAVEL_ALLOWANCE'}
                   onValueChange={(value) => setEditingProfile({ ...editingProfile, compensationType: value as any })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger id="compensation-type" name="compensation-type" className="dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -724,12 +892,12 @@ export default function TaxSummaryPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Fuel Borne By *</label>
+                <label htmlFor="fuel-borne-by" className="text-sm font-medium dark:text-gray-300">Fuel Borne By *</label>
                 <Select
                   value={editingProfile.fuelBorneBy || 'EMPLOYEE'}
                   onValueChange={(value) => setEditingProfile({ ...editingProfile, fuelBorneBy: value as any })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger id="fuel-borne-by" name="fuel-borne-by" className="dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -740,12 +908,12 @@ export default function TaxSummaryPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Maintenance Borne By *</label>
+                <label htmlFor="maintenance-borne-by" className="text-sm font-medium dark:text-gray-300">Maintenance Borne By *</label>
                 <Select
                   value={editingProfile.maintenanceBorneBy || 'EMPLOYEE'}
                   onValueChange={(value) => setEditingProfile({ ...editingProfile, maintenanceBorneBy: value as any })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger id="maintenance-borne-by" name="maintenance-borne-by" className="dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -756,12 +924,12 @@ export default function TaxSummaryPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Default Calculation Method *</label>
+                <label htmlFor="default-calculation-method" className="text-sm font-medium dark:text-gray-300">Default Calculation Method *</label>
                 <Select
                   value={editingProfile.defaultCalculationMethod || 'ACTUAL_COSTS'}
                   onValueChange={(value) => setEditingProfile({ ...editingProfile, defaultCalculationMethod: value as any })}
                 >
-                  <SelectTrigger>
+                  <SelectTrigger id="default-calculation-method" name="default-calculation-method" className="dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -772,19 +940,21 @@ export default function TaxSummaryPage() {
                 </Select>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium">Company Provided Vehicle</label>
+                <label htmlFor="company-provided-vehicle" className="text-sm font-medium dark:text-gray-300">Company Provided Vehicle</label>
                 <div className="flex items-center gap-2">
                   <input
+                    id="company-provided-vehicle"
+                    name="company-provided-vehicle"
                     type="checkbox"
                     checked={editingProfile.isCompanyProvidedVehicle || false}
                     onChange={(e) => setEditingProfile({ ...editingProfile, isCompanyProvidedVehicle: e.target.checked })}
                     className="h-4 w-4"
                   />
-                  <span className="text-sm">
+                  <span className="text-sm dark:text-gray-300">
                     {editingProfile.isCompanyProvidedVehicle ? 'Yes (Fringe Benefit)' : 'No (Personal Vehicle)'}
                   </span>
                 </div>
-                <p className="text-xs text-gray-500">Company car (fringe benefit) changes how private use is displayed for tax purposes.</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Company car (fringe benefit) changes how private use is displayed for tax purposes.</p>
               </div>
             </div>
             <div className="mt-4 flex gap-2">
@@ -804,6 +974,126 @@ export default function TaxSummaryPage() {
                   Reset
                 </Button>
               )}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Acquisition Facts Card */}
+      {vehicleTaxProfile && vehicleTaxProfile.recipientUserId && (
+        <Card className="border-green-200 bg-green-50 dark:border-green-900 dark:bg-green-950">
+          <CardHeader>
+            <CardTitle className="text-green-900 dark:text-green-100">Acquisition Facts</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <label htmlFor="vehicle-arrangement" className="text-sm font-medium dark:text-gray-300">Vehicle Arrangement *</label>
+                <Select
+                  value={editingAcquisitionFacts.vehicleArrangementType || 'OWNED'}
+                  onValueChange={(value) => setEditingAcquisitionFacts({ ...editingAcquisitionFacts, vehicleArrangementType: value as any })}
+                >
+                  <SelectTrigger id="vehicle-arrangement" name="vehicle-arrangement" className="dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="OWNED">Owned / Financed</SelectItem>
+                    <SelectItem value="LEASED">Leased</SelectItem>
+                  </SelectContent>
+                </Select>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {editingAcquisitionFacts.vehicleArrangementType === 'OWNED' 
+                    ? 'Wear-and-tear deduction applies to owned/financed vehicles.' 
+                    : 'Lease payments apply instead of wear-and-tear for leased vehicles.'}
+                </p>
+              </div>
+
+              {editingAcquisitionFacts.vehicleArrangementType === 'OWNED' && (
+                <>
+                  <div className="space-y-2">
+                    <label htmlFor="acquisition-date" className="text-sm font-medium dark:text-gray-300">Acquisition Date *</label>
+                    <input
+                      id="acquisition-date"
+                      name="acquisition-date"
+                      type="date"
+                      value={editingAcquisitionFacts.recipientAcquisitionDate || ''}
+                      onChange={(e) => setEditingAcquisitionFacts({ ...editingAcquisitionFacts, recipientAcquisitionDate: e.target.value })}
+                      className="w-full px-3 py-2 border rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
+                      max={new Date().toISOString().split('T')[0]}
+                    />
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Date this tax recipient acquired the vehicle.</p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="acquisition-cost" className="text-sm font-medium dark:text-gray-300">Acquisition Cost *</label>
+                    <input
+                      id="acquisition-cost"
+                      name="acquisition-cost"
+                      type="number"
+                      step="0.01"
+                      value={acquisitionCostInput}
+                      onChange={(e) => setAcquisitionCostInput(e.target.value)}
+                      onBlur={(e) => {
+                        if (e.target.value) {
+                          const numValue = parseFloat(e.target.value);
+                          setAcquisitionCostInput(numValue.toFixed(2));
+                          setEditingAcquisitionFacts({ ...editingAcquisitionFacts, recipientAcquisitionCostCents: Math.round(numValue * 100) });
+                        }
+                      }}
+                      className="w-full px-3 py-2 border rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
+                      placeholder="e.g., 250000.00"
+                    />
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Recipient-specific acquisition amount including VAT.</p>
+                  </div>
+                </>
+              )}
+
+              <div className="space-y-2">
+                <label htmlFor="purchase-debt" className="text-sm font-medium dark:text-gray-300">Original Purchase Debt (Optional)</label>
+                <input
+                  id="purchase-debt"
+                  name="purchase-debt"
+                  type="number"
+                  step="0.01"
+                  value={purchaseDebtInput}
+                  onChange={(e) => setPurchaseDebtInput(e.target.value)}
+                  onBlur={(e) => {
+                    if (e.target.value) {
+                      const numValue = parseFloat(e.target.value);
+                      setPurchaseDebtInput(numValue.toFixed(2));
+                      setEditingAcquisitionFacts({ ...editingAcquisitionFacts, originalPurchaseDebtCents: Math.round(numValue * 100) });
+                    } else {
+                      setEditingAcquisitionFacts({ ...editingAcquisitionFacts, originalPurchaseDebtCents: null });
+                    }
+                  }}
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
+                  placeholder="e.g., 150000.00"
+                />
+                <p className="text-xs text-gray-500 dark:text-gray-400">Original debt incurred for acquisition (financing only). Leave blank if not financed.</p>
+              </div>
+
+              <div className="mt-4 flex gap-2">
+                <Button
+                  onClick={saveAcquisitionFacts}
+                  disabled={savingAcquisitionFacts}
+                  className="bg-green-600 hover:bg-green-700"
+                >
+                  {savingAcquisitionFacts ? 'Saving...' : acquisitionFacts ? 'Update Facts' : 'Save Facts'}
+                </Button>
+                {acquisitionFacts && (
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setEditingAcquisitionFacts(acquisitionFacts);
+                      setAcquisitionCostInput(acquisitionFacts.recipientAcquisitionCostCents ? (acquisitionFacts.recipientAcquisitionCostCents / 100).toFixed(2) : '');
+                      setPurchaseDebtInput(acquisitionFacts.originalPurchaseDebtCents ? (acquisitionFacts.originalPurchaseDebtCents / 100).toFixed(2) : '');
+                    }}
+                    disabled={savingAcquisitionFacts}
+                  >
+                    Reset
+                  </Button>
+                )}
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -1234,7 +1524,7 @@ export default function TaxSummaryPage() {
                     disabled={exportLoading}
                     name="calculation-method"
                   >
-                    <SelectTrigger id="calculation-method-select">
+                    <SelectTrigger id="calculation-method-select" name="calculation-method-select">
                       <SelectValue placeholder="Select a method" />
                     </SelectTrigger>
                     <SelectContent>

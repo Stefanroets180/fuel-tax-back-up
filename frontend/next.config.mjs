@@ -7,6 +7,7 @@ const nextConfig = {
   experimental: {
     webVitalsAttribution: [],
   },
+  turbopack: {},
   // Disable web-vitals reporting to prevent startTime errors
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,

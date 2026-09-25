@@ -154,6 +154,7 @@ export default function EditVehiclePage() {
       console.log("Tax profile response:", response.data);
       if (response.data && response.data.length > 0) {
         const profile = response.data[0];
+        // Preserve existing stored date, only use business trip suggestion if empty
         const finalDate = profile.datePlacedInBusinessUse || firstBusinessDate;
         console.log("Setting tax profile with date:", finalDate);
         setTaxProfile({
@@ -170,7 +171,7 @@ export default function EditVehiclePage() {
           effectiveTo: profile.effectiveTo || null,
         });
       } else {
-        // No tax profile exists, create one with first business date
+        // No tax profile exists, create one with first business date if available
         console.log("No tax profile found, creating new with date:", firstBusinessDate);
         setTaxProfile({
           vehicleCostCents: 0,
@@ -181,7 +182,7 @@ export default function EditVehiclePage() {
           fuelBorneBy: "",
           maintenanceBorneBy: "",
           coveredByMaintenancePlan: false,
-          effectiveFrom: new Date().toISOString().split('T')[0],
+          effectiveFrom: "",
           effectiveTo: null,
         });
       }
@@ -193,6 +194,13 @@ export default function EditVehiclePage() {
 
   const handleTaxProfileSave = async () => {
     if (!taxProfile) return;
+    
+    // Validate required fields before save
+    if (!taxProfile.datePlacedInBusinessUse) {
+      alert("Date Placed in Business Use is required");
+      return;
+    }
+    
     setSavingTaxProfile(true);
     try {
       const payload = {
@@ -204,7 +212,7 @@ export default function EditVehiclePage() {
         fuelBorneBy: taxProfile.fuelBorneBy,
         maintenanceBorneBy: taxProfile.maintenanceBorneBy,
         coveredByMaintenancePlan: taxProfile.coveredByMaintenancePlan,
-        effectiveFrom: taxProfile.effectiveFrom,
+        effectiveFrom: taxProfile.effectiveFrom || new Date().toISOString().split('T')[0],
       };
 
       if (taxProfile.id) {
